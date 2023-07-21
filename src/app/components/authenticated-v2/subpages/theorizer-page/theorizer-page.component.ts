@@ -16,7 +16,7 @@
  */
 
 import { Component, OnInit } from "@angular/core";
-import GLPKConstructor, { GLPK, LP, Result } from "glpk.js";
+import { GLPK, LP, Result } from "glpk.js";
 //declare const GLPKConstructor: () => GLPK;
 import { ModifierType } from "src/app/data/enum/modifierType";
 import { IInventoryArmor } from "../../../../data/types/IInventoryArmor";
@@ -30,6 +30,8 @@ import {
 } from "../../../../data/enum/armor-stat";
 import { Table } from "dexie";
 import { IManifestArmor } from "../../../../data/types/IManifestArmor";
+
+const GLPKConstructor = require("glpk.js");
 
 const statNames = ["mobility", "resilience", "recovery", "discipline", "intellect", "strength"];
 

@@ -50,8 +50,6 @@ import {
   AssumeArmorMasterwork,
   Loadout,
   LoadoutParameters,
-  LockArmorEnergyType,
-  UpgradeSpendTier,
 } from "@destinyitemmanager/dim-api-types";
 import { CharacterClass } from "src/app/data/enum/character-Class";
 

@@ -26,9 +26,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   // Positive STASIS
   [ModOrAbility.WhisperOfDurance]: {
     id: ModOrAbility.WhisperOfDurance,
-    name: "Whisper Of Durance",
-    description:
-      "Slow from your abilities lasts longer. For those abilities that linger, their duration will also increase.",
+    name: "耐久之吟",
+    description: "你的技能的减速效果持续时间更长。所有持续技能的持续时间也会加长。",
     type: ModifierType.Stasis,
     bonus: [{ stat: ArmorStat.Strength, value: 10 }],
     cost: 1,
@@ -37,9 +36,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.WhisperOfChains]: {
     id: ModOrAbility.WhisperOfChains,
-    name: "Whisper Of Chains",
-    description:
-      "While you are near frozen targets or a friendly Stasis crystal, you take reduced damage from targets.",
+    name: "锁链的低语",
+    description: "在被冻结的目标或友方冰影水晶附近时，你受到来自目标的伤害降低。",
     type: ModifierType.Stasis,
     bonus: [{ stat: ArmorStat.Recovery, value: 10 }],
     cost: 1,
@@ -48,9 +46,9 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.WhisperOfShards]: {
     id: ModOrAbility.WhisperOfShards,
-    name: "Whisper Of Shards",
+    name: "破碎之吟",
     description:
-      "Shattering a Stasis crystal temporarily boosts your grenade recharge rate. Shattering additional Stasis crystals increases the duration of this benefit.",
+      "破碎冰影结晶会在短时间内使你的手雷充能速度加快。破碎额外的冰影结晶可增加此增益的持续时间。",
     type: ModifierType.Stasis,
     bonus: [{ stat: ArmorStat.Resilience, value: 10 }],
     cost: 1,
@@ -59,8 +57,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.WhisperOfConduction]: {
     id: ModOrAbility.WhisperOfConduction,
-    name: "Whisper Of Conduction",
-    description: "Nearby Stasis shards track to your position.",
+    name: "传导之吟",
+    description: "附近的冰影碎片会追踪至你的位置。",
     type: ModifierType.Stasis,
     bonus: [
       { stat: ArmorStat.Resilience, value: 10 },
@@ -74,8 +72,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
 
   [ModOrAbility.WhisperOfBonds]: {
     id: ModOrAbility.WhisperOfBonds,
-    name: "Whisper of Bonds",
-    description: "Defeating frozen targets grants you Super energy.",
+    name: "束缚之吟",
+    description: "消灭被冻结的目标可获得超能能量。",
     type: ModifierType.Stasis,
     bonus: [
       { stat: ArmorStat.Discipline, value: -10 },
@@ -87,9 +85,9 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.WhisperOfHedrons]: {
     id: ModOrAbility.WhisperOfHedrons,
-    name: "Whisper of Hedrons",
+    name: "晶石之吟",
     description:
-      "Dramatically increases weapon stability, weapon aim assist, Mobility, Resilience, and Recovery after freezing a target with Stasis.",
+      "使用冰影冻住目标之后大幅提升武器稳定性、武器瞄准辅助、武器空中效率、敏捷、韧性和恢复。",
     type: ModifierType.Stasis,
     bonus: [{ stat: ArmorStat.Strength, value: -10 }],
     cost: 1,
@@ -98,8 +96,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.WhisperOfFractures]: {
     id: ModOrAbility.WhisperOfFractures,
-    name: "Whisper of Fractures",
-    description: "Your melee energy recharges faster when you are near two or more targets.",
+    name: "脆弱的低语",
+    description: "当你身边有至少 2 个目标时，你的近战能量充能更快。",
     type: ModifierType.Stasis,
     bonus: [{ stat: ArmorStat.Discipline, value: -10 }],
     cost: 1,
@@ -108,8 +106,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.WhisperOfHunger]: {
     id: ModOrAbility.WhisperOfHunger,
-    name: "Whisper of Hunger",
-    description: "Increases the melee energy gained from picking up Stasis shards.",
+    name: "饥饿之吟",
+    description: "增加拾取冰影碎片时得到的近战能量。",
     type: ModifierType.Stasis,
     bonus: [
       { stat: ArmorStat.Mobility, value: -10 },
@@ -122,8 +120,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   // VOID
   [ModOrAbility.EchoOfExpulsion]: {
     id: ModOrAbility.EchoOfExpulsion,
-    name: "Echo of Expulsion",
-    description: "Void ability final blows cause targets to explode.",
+    name: "驱逐回声",
+    description: "虚空技能最后一击将造成目标爆炸。",
     type: ModifierType.Void,
     bonus: [{ stat: ArmorStat.Intellect, value: 10 }],
     cost: 1,
@@ -132,8 +130,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.EchoOfProvision]: {
     id: ModOrAbility.EchoOfProvision,
-    name: "Echo of Provision",
-    description: "Damaging targets with grenades grants melee energy.",
+    name: "补能回声",
+    description: "使用手雷对目标造成伤害可回复近战能量。",
     type: ModifierType.Void,
     bonus: [{ stat: ArmorStat.Strength, value: -10 }],
     cost: 1,
@@ -142,9 +140,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.EchoOfPersistence]: {
     id: ModOrAbility.EchoOfPersistence,
-    name: "Echo of Persistence",
-    description:
-      "Void buffs applied to you (Invisibility, Overshield, and Devour) have increased duration.",
+    name: "坚韧回声",
+    description: "你获得的虚空增益（隐身，覆盖护盾，吞食）的持续时间延长。",
     type: ModifierType.Void,
     bonus: [{ stat: SpecialArmorStat.ClassAbilityRegenerationStat, value: -10 }],
     cost: 1,
@@ -153,8 +150,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.EchoOfLeeching]: {
     id: ModOrAbility.EchoOfLeeching,
-    name: "Echo of Leeching",
-    description: "Melee final blows start health regeneration for you and nearby allies.",
+    name: "吸吮回声",
+    description: "近战最后一击会为你和你附近的友军带来生命恢复效果。",
     type: ModifierType.Void,
     bonus: [{ stat: ArmorStat.Resilience, value: 10 }],
     cost: 1,
@@ -163,9 +160,9 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.EchoOfDomineering]: {
     id: ModOrAbility.EchoOfDomineering,
-    name: "Echo of Domineering",
+    name: "霸道回声",
     description:
-      "After suppressing a target, you gain greatly increased Mobility for a short duration and your equipped weapon is reloaded from reserves.",
+      "压制目标后，你的敏捷会在短时间内大幅提升，并用储存弹药填装当前装备的武器。击败被压制的目标会生成一个虚空裂口。",
     type: ModifierType.Void,
     bonus: [{ stat: ArmorStat.Discipline, value: 10 }],
     cost: 1,
@@ -174,8 +171,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.EchoOfDilation]: {
     id: ModOrAbility.EchoOfDilation,
-    name: "Echo of Dilation",
-    description: "While crouched, you sneak faster and gain enhanced radar resolution.",
+    name: "扩张回声",
+    description: "蹲下时，你的潜行速度更快并获得增强雷达分辨率。",
     type: ModifierType.Void,
     bonus: [
       { stat: ArmorStat.Mobility, value: 10 },
@@ -187,8 +184,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.EchoOfUndermining]: {
     id: ModOrAbility.EchoOfUndermining,
-    name: "Echo of Undermining",
-    description: "Your Void grenades weaken targets.",
+    name: "弱化回声",
+    description: "你的虚空手雷会削弱目标。",
     type: ModifierType.Void,
     bonus: [{ stat: ArmorStat.Discipline, value: -20 }],
     cost: 1,
@@ -197,8 +194,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.EchoOfInstability]: {
     id: ModOrAbility.EchoOfInstability,
-    name: "Echo of Instability",
-    description: "Defeating targets with grenades grants Volatile Rounds to your Void weapons.",
+    name: "失稳回声",
+    description: "使用手雷击败目标可给你的虚空武器装上不稳定弹药。",
     type: ModifierType.Void,
     bonus: [{ stat: ArmorStat.Strength, value: 10 }],
     cost: 1,
@@ -207,8 +204,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.EchoOfObscurity]: {
     id: ModOrAbility.EchoOfObscurity,
-    name: "Echo of Obscurity",
-    description: "Finisher final blows grant Invisibility.",
+    name: "朦胧回声",
+    description: "终结技最后一击将赋予隐身。",
     type: ModifierType.Void,
     bonus: [{ stat: ArmorStat.Recovery, value: 10 }],
     cost: 1,
@@ -217,9 +214,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.EchoOfHarvest]: {
     id: ModOrAbility.EchoOfHarvest,
-    name: "Echo of Harvest",
-    description:
-      "Defeating weakened targets with precision final blows will create an Orb of Power.",
+    name: "收割回声",
+    description: "击败虚弱的目标会生成一个能量球以及一个虚空裂口。",
     type: ModifierType.Void,
     bonus: [{ stat: ArmorStat.Intellect, value: -10 }],
     cost: 1,
@@ -228,8 +224,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.EchoOfStarvation]: {
     id: ModOrAbility.EchoOfStarvation,
-    name: "Echo of Starvation",
-    description: "Picking up an Orb of Power grants Devour.",
+    name: "饥饿回声",
+    description: "拾取虚空裂口或能量球会赋予吞食。",
     type: ModifierType.Void,
     bonus: [{ stat: ArmorStat.Recovery, value: -10 }],
     cost: 1,
@@ -238,9 +234,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.EchoOfVigilance]: {
     id: ModOrAbility.EchoOfVigilance,
-    name: "Echo of Vigilance",
-    description:
-      "Defeating a target while your shields are depleted grants you a temporary Void overshield.",
+    name: "警惕回声",
+    description: "护盾耗尽时击败一个目标，就会获得一个临时的虚空覆盖护盾。",
     type: ModifierType.Void,
     bonus: [{ stat: ArmorStat.Recovery, value: -10 }],
     cost: 1,
@@ -250,9 +245,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   // SOLAR
   [ModOrAbility.EmberOfBenelovence]: {
     id: ModOrAbility.EmberOfBenelovence,
-    name: "Ember of Benelovence",
-    description:
-      "Applying restoration, cure, or radiant to allies grants increased grenade, melee, and class ability regeneration for a short duration.",
+    name: "仁慈余烬",
+    description: "对友军施加恢复、治疗或焕光效果可在短时间内提升手雷、近战和职业技能的再生能力。",
     type: ModifierType.Solar,
     bonus: [{ stat: ArmorStat.Discipline, value: -10 }],
     cost: 1,
@@ -261,8 +255,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.EmberOfBeams]: {
     id: ModOrAbility.EmberOfBeams,
-    name: "Ember of Beams",
-    description: "Your Solar Super projectiles have stronger target acquisition.",
+    name: "光线余烬",
+    description: "你的烈日超能弹道将拥有更强的捕获能力。",
     type: ModifierType.Solar,
     bonus: [{ stat: ArmorStat.Intellect, value: 10 }],
     cost: 1,
@@ -271,9 +265,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.EmberOfEmpyrean]: {
     id: ModOrAbility.EmberOfEmpyrean,
-    name: "Ember of Empyrean",
-    description:
-      "Solar weapon or ability final blows extend the duration of restoration and radiant effects applied to you.",
+    name: "至高天余烬",
+    description: "烈日武器或技能最后一击可延长施加在自身的恢复和焕光效果的持续时间。",
     type: ModifierType.Solar,
     bonus: [{ stat: ArmorStat.Resilience, value: -10 }],
     cost: 1,
@@ -282,8 +275,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.EmberOfCombustion]: {
     id: ModOrAbility.EmberOfCombustion,
-    name: "Ember of Combustion",
-    description: "Final blows with your Solar Super cause targets to ignite.",
+    name: "燃烧余烬",
+    description: "使用烈日超能完成最后一击可对目标造成点燃效果并生成一个焰灵。",
     type: ModifierType.Solar,
     bonus: [{ stat: ArmorStat.Strength, value: 10 }],
     cost: 1,
@@ -292,8 +285,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.EmberOfChar]: {
     id: ModOrAbility.EmberOfChar,
-    name: "Ember of Char",
-    description: "Your Solar ignitions spread scorch to affected targets.",
+    name: "烧焦余烬",
+    description: "你的烈日点燃可将灼烧效果蔓延至受影响的目标。",
     type: ModifierType.Solar,
     bonus: [{ stat: ArmorStat.Discipline, value: 10 }],
     cost: 1,
@@ -303,10 +296,10 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   [ModOrAbility.EmberOfTempering]: {
     // may be wrong
     id: ModOrAbility.EmberOfTempering,
-    name: "Ember of Tempering",
+    name: "回火余烬",
     description:
-      "Solar weapon final blows grant you and your allies increased recovery for a short duration. Stacks 3 times.\n" +
-      "While Ember of Tempering is active, your weapons have increased airborne effectiveness.",
+      "烈日武器最后一击可让你和盟友在短时间内获得更高的恢复能力。可叠加3层。\n" +
+      "激活回火余烬时，你的武器将拥有更高的空中效率，并且烈日武器最后一击可生成一个焰灵。",
     type: ModifierType.Solar,
     bonus: [{ stat: ArmorStat.Recovery, value: -10 }],
     cost: 1,
@@ -315,8 +308,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.EmberOfEruption]: {
     id: ModOrAbility.EmberOfEruption,
-    name: "Ember of Eruption",
-    description: "Your Solar ignitions have increased area of effect.",
+    name: "喷发余烬",
+    description: "你的烈日点燃范围效果获得提升。",
     type: ModifierType.Solar,
     bonus: [{ stat: ArmorStat.Strength, value: 10 }],
     cost: 1,
@@ -325,9 +318,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.EmberOfWonder]: {
     id: ModOrAbility.EmberOfWonder,
-    name: "Ember of Wonder",
-    description:
-      "Rapidly defeating multiple targets with Solar ignitions generates an Orb of Power.",
+    name: "惊奇余烬",
+    description: "通过烈日点燃快速消灭多个目标会生成能量球。",
     type: ModifierType.Solar,
     bonus: [{ stat: ArmorStat.Resilience, value: 10 }],
     cost: 1,
@@ -336,8 +328,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.EmberOfSearing]: {
     id: ModOrAbility.EmberOfSearing,
-    name: "Ember of Searing",
-    description: "Defeating scorched targets grants melee energy.",
+    name: "炽热余烬",
+    description: "击败灼烧的目标可获得近战能量并生成一个焰灵。",
     type: ModifierType.Solar,
     bonus: [{ stat: ArmorStat.Recovery, value: 10 }],
     cost: 1,
@@ -346,8 +338,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.EmberOfTorches]: {
     id: ModOrAbility.EmberOfTorches,
-    name: "Ember of Torches",
-    description: "Powered melee attacks against combatants make you and nearby allies radiant.",
+    name: "火炬余烬",
+    description: "对战斗人员进行的充能近战攻击可赋予你和附近友军焕光效果。",
     type: ModifierType.Solar,
     bonus: [{ stat: ArmorStat.Discipline, value: -10 }],
     cost: 1,
@@ -356,9 +348,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.EmberOfMercy]: {
     id: ModOrAbility.EmberOfMercy,
-    name: "Ember of Mercy",
-    description:
-      "When you revive an ally, you and other nearby allies gain restoration. Picking up a Firesprite grants restoration.",
+    name: "仁慈余烬",
+    description: "当你复活盟友时，你和其他附近盟友将获得恢复效果。拾取焰灵可赋予恢复效果。",
     type: ModifierType.Solar,
     bonus: [{ stat: ArmorStat.Resilience, value: 10 }],
     cost: 1,
@@ -369,8 +360,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
 
   [ModOrAbility.SparkOfBrilliance]: {
     id: ModOrAbility.SparkOfBrilliance,
-    name: "Spark of Brilliance",
-    description: "Defeating a blinded target with precision damage creates a blinding explosion.",
+    name: "光辉火花",
+    description: "用精准伤害击败一个被致盲的目标会造成一个致盲爆炸。",
     type: ModifierType.Arc,
     bonus: [{ stat: ArmorStat.Intellect, value: 10 }],
     cost: 1,
@@ -379,8 +370,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.SparkOfFeedback]: {
     id: ModOrAbility.SparkOfFeedback,
-    name: "Spark of Feedback",
-    description: "Taking melee damage briefly increases your outgoing melee damage.",
+    name: "反馈火花",
+    description: "承受近战伤害可在短时间内增加你造成的近战伤害。",
     type: ModifierType.Arc,
     bonus: [{ stat: ArmorStat.Resilience, value: 10 }],
     cost: 1,
@@ -389,8 +380,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.SparkOfDischarge]: {
     id: ModOrAbility.SparkOfDischarge,
-    name: "Spark of Discharge",
-    description: "Arc weapon final blows have a chance to create an Ionic Trace.",
+    name: "放电火花",
+    description: "电弧武器最后一击有几率产生一个离子轨迹。",
     type: ModifierType.Arc,
     bonus: [{ stat: ArmorStat.Strength, value: -10 }],
     cost: 1,
@@ -399,8 +390,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.SparkOfFocus]: {
     id: ModOrAbility.SparkOfFocus,
-    name: "Spark of Focus",
-    description: "After sprinting for a short time, your class ability regeneration is increased.",
+    name: "专注火花",
+    description: "进行冲刺后短时间内，你的职业技能回复会增加。",
     type: ModifierType.Arc,
     bonus: [{ stat: SpecialArmorStat.ClassAbilityRegenerationStat, value: -10 }],
     cost: 1,
@@ -409,8 +400,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.SparkOfVolts]: {
     id: ModOrAbility.SparkOfVolts,
-    name: "Spark of Volts",
-    description: "Finishers make you amplified.",
+    name: "伏特火花",
+    description: "终结技会使你进入增幅状态。",
     type: ModifierType.Arc,
     bonus: [{ stat: ArmorStat.Recovery, value: 10 }],
     cost: 1,
@@ -419,8 +410,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.SparkOfResistance]: {
     id: ModOrAbility.SparkOfResistance,
-    name: "Spark of Resistance",
-    description: "While surrounded by combatants, you are more resistant to incoming damage.",
+    name: "抗性火花",
+    description: "在被战斗人员包围时，你对伤害的抗性增加。",
     type: ModifierType.Arc,
     bonus: [{ stat: ArmorStat.Strength, value: 10 }],
     cost: 1,
@@ -429,8 +420,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.SparkOfShock]: {
     id: ModOrAbility.SparkOfShock,
-    name: "Spark of Shock",
-    description: "Your Arc grenades jolt targets.",
+    name: "震颤火花",
+    description: "你的电弧手雷会震颤目标。",
     type: ModifierType.Arc,
     bonus: [{ stat: ArmorStat.Discipline, value: -10 }],
     cost: 1,
@@ -440,8 +431,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   /* Strand */
   [ModOrAbility.ThreadOfFury]: {
     id: ModOrAbility.ThreadOfFury,
-    name: "Thread of Fury",
-    description: "Damaging targets with a Tangle grants melee energy.",
+    name: "狂怒丝线",
+    description: "使用缠结对目标造成伤害可回复近战能量。",
     type: ModifierType.Strand,
     bonus: [{ stat: ArmorStat.Strength, value: -10 }],
     cost: 1,
@@ -450,9 +441,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.ThreadOfAscent]: {
     id: ModOrAbility.ThreadOfAscent,
-    name: "Thread of Ascent",
-    description:
-      "Activating your grenade ability reloads your equipped weapon and grants bonus airborne effectiveness and handling for a short duration",
+    name: "上升丝线",
+    description: "激活你的手雷技能会填装你已装备的武器并在短时间内提供额外的空中效率和操控性。",
     type: ModifierType.Strand,
     bonus: [{ stat: ArmorStat.Mobility, value: 10 }],
     cost: 1,
@@ -461,8 +451,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.ThreadOfFinality]: {
     id: ModOrAbility.ThreadOfFinality,
-    name: "Thread of Finality",
-    description: "Finisher final blows create Threadlings.",
+    name: "终局丝线",
+    description: "终结技最后一击会生成线虫。",
     type: ModifierType.Strand,
     bonus: [{ stat: ArmorStat.Recovery, value: 10 }],
     cost: 1,
@@ -471,8 +461,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.ThreadOfWarding]: {
     id: ModOrAbility.ThreadOfWarding,
-    name: "Thread of Warding",
-    description: "Picking up an Orb of Power grants Woven Mail.",
+    name: "守护丝线",
+    description: "拾取能量球会提供织造铠甲。",
     type: ModifierType.Strand,
     bonus: [{ stat: ArmorStat.Resilience, value: -10 }],
     cost: 1,
@@ -481,8 +471,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.ThreadOfTransmutation]: {
     id: ModOrAbility.ThreadOfTransmutation,
-    name: "Thread of Transmutation",
-    description: "While you have Woven Mail, weapon final blows create a Tangle",
+    name: "蜕变丝线",
+    description: "处于织造铠甲状态时，武器最后一击会生成一个缠结。",
     type: ModifierType.Strand,
     bonus: [{ stat: ArmorStat.Strength, value: 10 }],
     cost: 1,
@@ -491,8 +481,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.ThreadOfEvolution]: {
     id: ModOrAbility.ThreadOfEvolution,
-    name: "Thread of Evolution",
-    description: "Threadlings travel farther and deal additional damage.",
+    name: "进化丝线",
+    description: "线虫可移动得更远并造成额外伤害。",
     type: ModifierType.Strand,
     bonus: [{ stat: ArmorStat.Intellect, value: 10 }],
     cost: 1,
@@ -501,8 +491,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.ThreadOfBinding]: {
     id: ModOrAbility.ThreadOfBinding,
-    name: "Thread of Binding",
-    description: "Super final blows emit a suspending burst from the target.",
+    name: "束缚丝线",
+    description: "超能最后一击会从目标身上爆发出悬停脉冲。",
     type: ModifierType.Strand,
     bonus: [{ stat: ArmorStat.Resilience, value: 10 }],
     cost: 1,
@@ -511,8 +501,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.ThreadOfGeneration]: {
     id: ModOrAbility.ThreadOfGeneration,
-    name: "Thread of Generation",
-    description: "Dealing damage generates grenade energy.",
+    name: "生成丝线",
+    description: "造成伤害会生成手雷能量。",
     type: ModifierType.Strand,
     bonus: [{ stat: ArmorStat.Discipline, value: -10 }],
     cost: 1,
@@ -521,8 +511,8 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
   },
   [ModOrAbility.ThreadOfContinuity]: {
     id: ModOrAbility.ThreadOfContinuity,
-    name: "Thread of Continuity",
-    description: "Suspend, unravel, and sever effects applied to targets have increased duration.",
+    name: "持续丝线",
+    description: "向目标施加的悬停、瓦解和割裂效果拥有更久的持续时间。",
     type: ModifierType.Strand,
     bonus: [{ stat: ArmorStat.Strength, value: 10 }],
     cost: 1,

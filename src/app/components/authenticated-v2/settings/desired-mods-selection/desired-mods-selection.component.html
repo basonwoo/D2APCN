@@ -20,19 +20,19 @@
     <br />
     <mat-button-toggle-group [value]="selectedElement">
       <mat-button-toggle (click)="setElement(ModifierType.Arc)" [value]="ModifierType.Arc">
-        Arc
+        电弧
       </mat-button-toggle>
       <mat-button-toggle (click)="setElement(ModifierType.Solar)" [value]="ModifierType.Solar">
-        Solar
+        烈日
       </mat-button-toggle>
       <mat-button-toggle (click)="setElement(ModifierType.Void)" [value]="ModifierType.Void">
-        Void
+        虚空
       </mat-button-toggle>
       <mat-button-toggle (click)="setElement(ModifierType.Stasis)" [value]="ModifierType.Stasis">
-        Stasis
+        冰影
       </mat-button-toggle>
       <mat-button-toggle (click)="setElement(ModifierType.Strand)" [value]="ModifierType.Strand">
-        Strand
+        缚丝
       </mat-button-toggle>
     </mat-button-toggle-group>
   </ng-container>
@@ -44,7 +44,7 @@
     <table [dataSource]="d.data" mat-table *ngIf="d.data.length > 0">
       <!-- Position Column -->
       <ng-container matColumnDef="name">
-        <th *matHeaderCellDef mat-header-cell>Name</th>
+        <th *matHeaderCellDef mat-header-cell>碎片名称</th>
         <td *matCellDef="let element" mat-cell [modTooltip]="element">
           <mat-slide-toggle
             [checked]="selectedMods.indexOf(element.id) > -1"
@@ -144,5 +144,5 @@
 </span>
 
 <div id="clear-container">
-  <button (click)="clear()" color="warn" mat-stroked-button>Clear the whole selection</button>
+  <button (click)="clear()" color="warn" mat-stroked-button>清空</button>
 </div>

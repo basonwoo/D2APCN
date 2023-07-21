@@ -25,7 +25,7 @@
   <mat-toolbar>
     <button (click)="drawer.toggle()" aria-label="Toggle sidenav" mat-stroked-button type="button">
       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      Close Menu
+      关闭菜单
     </button>
   </mat-toolbar>
   <hr />
@@ -46,11 +46,11 @@
         matTooltip="You like my work? This leads you to ko-fi.com, where you can easily support me!"
         target="_blank">
         <mat-icon inline>attach_money</mat-icon>
-        Buy me a coffee!
+        打赏
       </a>
     </a>
     <a (click)="changelog.openChangelogDialog()" mat-list-item>
-      <a mat-raised-button> Open changelog </a>
+      <a mat-raised-button>打开更新记录</a>
     </a>
     <hr />
   </mat-nav-list>
@@ -113,10 +113,10 @@
       fxShow="true"
       href="https://ko-fi.com/mijago"
       mat-stroked-button
-      matTooltip="You like my work? This leads you to ko-fi.com, where you can easily support me!"
+      matTooltip="打赏作者"
       target="_blank">
       <mat-icon inline>attach_money</mat-icon>
-      Buy me a coffee!
+      打赏
     </a>
 
     <button
@@ -124,7 +124,7 @@
       aria-label="Refresh"
       class="example-icon"
       mat-icon-button
-      matTooltip="Reload all items from the API.">
+      matTooltip="刷新">
       <mat-icon>refresh</mat-icon>
     </button>
 
@@ -134,7 +134,7 @@
       class="example-icon"
       color="warn"
       mat-icon-button
-      matTooltip="Logout">
+      matTooltip="注销">
       <mat-icon>logout</mat-icon>
     </button>
   </div>
@@ -155,21 +155,18 @@
 </span>
 
 <span *ngVar="status.status | async as stat">
-  <mat-card *ngIf="stat.updatingManifest" class="info"
-    >Updating the cached manifest. Please wait. <br />If this takes too long, please logout and
-    login again.</mat-card
-  >
-  <mat-card *ngIf="stat.updatingInventory" class="info"
-    >Updating the cached inventory. Please wait.</mat-card
-  >
-  <mat-card *ngIf="stat.calculatingPermutations" class="info"
-    >Updating armor combinations. Please wait.</mat-card
-  >
-  <mat-card *ngIf="stat.calculatingResults" class="info"
-    >Updating possible results. Please wait.</mat-card
-  >
-  <mat-card *ngIf="stat.updatingResultsTable" class="info"
-    >Updating result table. Please wait.</mat-card
-  >
+  <mat-card *ngIf="stat.updatingManifest" class="info">
+    正在更新数据，请稍等...
+    <br />
+    如果用时过长，请注销后重新登录。
+  </mat-card>
+  <mat-card *ngIf="stat.updatingInventory" class="info"> 正在更新数据，请稍等... </mat-card>
+  <mat-card *ngIf="stat.calculatingPermutations" class="info">
+    正在更新护甲组合，请稍等...
+  </mat-card>
+  <mat-card *ngIf="stat.calculatingResults" class="info"> 正在更新 Build 列表，请稍等... </mat-card>
+  <mat-card *ngIf="stat.updatingResultsTable" class="info">
+    正在获取 Build 详情，请稍等...
+  </mat-card>
 </span>
 <app-changelog-dialog-controller></app-changelog-dialog-controller>

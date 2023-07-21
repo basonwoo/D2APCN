@@ -20,29 +20,29 @@ import { CharacterClass } from "../enum/character-Class";
 
 export const MeleeAbilitiesPerClassAndTier: EnumDictionary<CharacterClass, string[]> = {
   [CharacterClass.Titan]: [
-    "Shiver Strike", // 1:53
+    "战栗打击", // 1:53
     "", // 1:49
-    "Frontal Assault", // 1:46
-    "Shield Throw", // 1:40
-    "Throwing Hammer, Hammer Strike, Shield Bash, Seismic Strike, Ballistic Slam, Thunderclap", // 1:30
+    "", // 1:46
+    "圣盾投掷", // 1:40
+    "投掷飞锤, 战锤打击, 圣盾猛击, 地震打击, 弹道猛击, 雷霆一击", // 1:30
     "", // 1:22
     "", // 0:15
   ],
   [CharacterClass.Hunter]: [
-    "Withering Blade", // 1:53
-    "Weighted Throwing Knife", // 1:49
+    "枯萎之刃", // 1:53
+    "权衡飞刀", // 1:49
     "", // 1:46
-    "Proximity Expl. Knife, Tempest Strike, Disorienting Blow", // 1:40
-    "Lightweight Knife, Snare Bomb", // 1:30
-    "Knife Trick", // 1:22
-    "Combination Blow", // 0:15
+    "感应爆炸飞刀, 裂空打击, 迷失一击", // 1:40
+    "轻质飞刀, 陷阱炸弹", // 1:30
+    "飞刀戏法", // 1:22
+    "组合打击", // 0:15
   ],
   [CharacterClass.Warlock]: [
-    "Penumbral Blast, Ball Lightning", // 1:53
+    "半影冲击, 球形闪电", // 1:53
     "", // 1:49
     "", // 1:46
-    "Celestial Fire", // 1:40
-    "Incinerator Snap, Pocket Singularity, Chain Lightning, Rising Storm", // 1:30
+    "星界之火", // 1:40
+    "焚烧响指, 口袋奇点, 连锁闪电", // 1:30
     "", // 1:22
     "", // 0:15
   ],

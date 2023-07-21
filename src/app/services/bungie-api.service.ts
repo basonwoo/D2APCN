@@ -556,7 +556,7 @@ export class BungieApiService {
     const manifestTables = await getDestinyManifestSlice((d) => this.$httpWithoutKey(d), {
       destinyManifest: destinyManifest.Response,
       tableNames: ["DestinyInventoryItemDefinition"],
-      language: "en",
+      language: "zh-chs",
     });
 
     console.log(
@@ -594,7 +594,7 @@ export class BungieApiService {
             ); // head
           }).length || []) > 0;
 
-        const isExotic = v.inventory?.tierTypeName == "Exotic" ? 1 : 0;
+        const isExotic = v.inventory?.tierTypeName == "异域" ? 1 : 0;
         let exoticPerkHash = null;
         if (isExotic) {
           const perks =

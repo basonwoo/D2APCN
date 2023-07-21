@@ -101,7 +101,7 @@ export class LoadAndSaveSettingsComponent implements OnInit, OnDestroy {
   delete(element: string) {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: "300px",
-      data: { description: "Do you want to delete this configuration?" } as ConfirmDialogData,
+      data: { description: "确定删除吗？" } as ConfirmDialogData,
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -112,7 +112,7 @@ export class LoadAndSaveSettingsComponent implements OnInit, OnDestroy {
   clearEverything() {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: "300px",
-      data: { description: "Do you want to clear all settings?" } as ConfirmDialogData,
+      data: { description: "确定清空全部配置吗？" } as ConfirmDialogData,
     });
 
     dialogRef.afterClosed().subscribe((result) => {

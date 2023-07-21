@@ -44,38 +44,38 @@ export class AdvancedSettingsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.config.configuration.pipe(takeUntil(this.ngUnsubscribe)).subscribe((c) => {
       this.fields2 = {
-        Events: [
+        事件: [
           {
-            name: "Enforce the usage of a Festival of the Lost Mask.",
+            name: "强制使用英灵日面具",
             cp: (v: boolean) => this.config.modifyConfiguration((c) => (c.useFotlArmor = v)),
             value: c.useFotlArmor,
             disabled: false,
             impactsResultCount: true,
-            help: "Only use a FotL masks. You will not get results if you do not own the mask.",
+            help: "仅对英灵日面具有效，如果你没有英灵日面具，那生成结果不会有任何变化",
           },
         ],
-        "Armor selection": [
+        护甲选择: [
           {
-            name: "Allow the usage of armor that is not exotic or legendary.",
+            name: "允许使用除异域以及传说以外的其他护甲",
             cp: (v: boolean) =>
               this.config.modifyConfiguration((c) => (c.allowBlueArmorPieces = v)),
             value: c.allowBlueArmorPieces,
             disabled: false,
             impactsResultCount: false,
-            help: "This setting allows the tool to use white, green and blue armor pieces.",
+            help: "此设置允许你使用蓝绿白装。",
           },
           {
-            name: "Ignore sunset armor.",
+            name: "忽略日落护甲",
             cp: (v: boolean) => this.config.modifyConfiguration((c) => (c.ignoreSunsetArmor = v)),
             value: c.ignoreSunsetArmor,
             disabled: false,
             impactsResultCount: false,
-            help: "Ignore sunset armor in the results.",
+            help: "生成结果中忽略日落护甲",
           },
         ],
-        Masterwork: [
+        大师杰作: [
           {
-            name: "Assume all legendary items are masterworked",
+            name: "假设所有紫装都升级到了大师",
             cp: (v: boolean) =>
               this.config.modifyConfiguration((c) => (c.assumeLegendariesMasterworked = v)),
             value: c.assumeLegendariesMasterworked,
@@ -84,25 +84,25 @@ export class AdvancedSettingsComponent implements OnInit, OnDestroy {
             help: undefined,
           },
           {
-            name: "Assume all exotic items are masterworked",
+            name: "假设所有金装都升级到了大师",
             cp: (v: boolean) =>
               this.config.modifyConfiguration((c) => (c.assumeExoticsMasterworked = v)),
             value: c.assumeExoticsMasterworked,
             disabled: false,
             impactsResultCount: false,
-            help: "If this setting is enabled, the tool will treat non-masterworked exotic armor as if it were masterworked-.",
+            help: "如果启用此设置，D2AP 会将所有未升级到大师的金装视为已升级到大师。",
           },
           {
-            name: "Assume that class items are masterworked",
+            name: "假设所有职业物品都升级到了大师",
             cp: (v: boolean) =>
               this.config.modifyConfiguration((c) => (c.assumeClassItemMasterworked = v)),
             value: c.assumeClassItemMasterworked,
             disabled: false,
             impactsResultCount: false,
-            help: "If this setting is enabled, a plain +2 is added to every stat. This means that your Class Item must be masterworked.",
+            help: "如果启用此设置，D2AP 会给职业物品的每个属性都 +2。",
           },
           {
-            name: "Only use already masterworked items",
+            name: "仅使用已经升级到大师的护甲",
             cp: (v: boolean) =>
               this.config.modifyConfiguration((c) => (c.onlyUseMasterworkedItems = v)),
             value: c.onlyUseMasterworkedItems,
@@ -111,28 +111,28 @@ export class AdvancedSettingsComponent implements OnInit, OnDestroy {
             help: undefined,
           },
         ],
-        "Performance Optimization": [
+        性能优化: [
           {
-            name: "Use security features to prevent app crashes (resets on reload).",
+            name: "使用安全策略防止应用崩溃（刷新页面时设置重置）。",
             cp: (v: boolean) => this.config.modifyConfiguration((c) => (c.limitParsedResults = v)),
             value: c.limitParsedResults,
             disabled: false,
             impactsResultCount: true,
-            help: "Only parse the first 30,000 results. Deactivating this may crash your browser. The results will still be limited to 1,000,000 entries. Note that you will not miss any significant results by leaving this enabled.",
+            help: "仅展示前 3000 条生成结果，关闭此设置会将展示条目限制在 1000000 条，这可能会导致应用崩溃。请注意，启用此设置并不会使你错过最佳 bd 组合。",
           },
           {
-            name: "Execute further optimization steps (slower).",
+            name: "执行进一步的优化",
             cp: (v: boolean) =>
               this.config.modifyConfiguration((c) => (c.executeModOptimization = v)),
             value: c.executeModOptimization,
             disabled: false,
             impactsResultCount: true,
-            help: "Executes further optimization steps when picking mods. This will increase the time it takes to calculate the results.",
+            help: "选择模组时执行进一步的优化，这会增加计算所需的时间。",
           },
         ],
         "Extra Columns": [
           {
-            name: "Show maximum reachable tiers in the Tiers-Column instead of real Tiers.",
+            name: "展示可达到的最高属性而不是实际属性",
             cp: (v: boolean) =>
               this.config.modifyConfiguration((c) => (c.showPotentialTierColumn = v)),
             value: c.showPotentialTierColumn,
@@ -141,7 +141,7 @@ export class AdvancedSettingsComponent implements OnInit, OnDestroy {
             help: "Shows an additional column in the table that shows how many tiers this build would have, if all stat mods were used. This is important when builds do not use all 5 stat mods.",
           },
           {
-            name: "Show the wasted stats in an extra column.",
+            name: "新增一列展示属性浪费情况",
             cp: (v: boolean) =>
               this.config.modifyConfiguration((c) => (c.showWastedStatsColumn = v)),
             value: c.showWastedStatsColumn,
@@ -150,17 +150,17 @@ export class AdvancedSettingsComponent implements OnInit, OnDestroy {
             help: "Shows an additional column in the table that shows how many stats are wasted in a build.",
           },
         ],
-        "Wasted Stats": [
+        属性浪费: [
           {
-            name: "Try to optimize wasted stats",
+            name: "尝试优化属性浪费",
             cp: (v: boolean) => this.config.modifyConfiguration((c) => (c.tryLimitWastedStats = v)),
             value: c.tryLimitWastedStats,
             disabled: false,
             impactsResultCount: false,
-            help: "The tool will try to add minor stat mods to minimize wasted stats. This only works for combinations that fulfill your desired stat combination with enough mods so at least one mod slot is still open.",
+            help: "D2AP 将尝试使用小型属性模组以减少属性浪费。",
           },
           {
-            name: "Only show builds with no wasted stats",
+            name: "仅显示零浪费的 build",
             cp: (v: boolean) =>
               this.config.modifyConfiguration((c) => (c.onlyShowResultsWithNoWastedStats = v)),
             value:
@@ -169,10 +169,10 @@ export class AdvancedSettingsComponent implements OnInit, OnDestroy {
               c.onlyShowResultsWithNoWastedStats,
             disabled: !c.tryLimitWastedStats || !environment.featureFlags.enableZeroWaste,
             impactsResultCount: true,
-            help: "Only show builds with zero wasted stats - this means, its highly likely that you won't get any results.",
+            help: "这意味着很可能没有任何结果",
           },
         ],
-        "Data-Science": [
+        数据科学: [
           {
             name: "Add a constant +1 resilience to the results with non-exotic chests (resets on reload).",
             cp: (v: boolean) =>
@@ -180,16 +180,16 @@ export class AdvancedSettingsComponent implements OnInit, OnDestroy {
             value: c.addConstent1Resilience,
             disabled: false,
             impactsResultCount: false,
-            help: "You usually do not want to use this.",
+            help: "通常用不上",
           },
           {
-            name: "Assume every legendary is an artifice armor.",
+            name: "假设紫装都是诡计护甲",
             cp: (v: boolean) =>
               this.config.modifyConfiguration((c) => (c.assumeEveryLegendaryIsArtifice = v)),
             value: c.assumeEveryLegendaryIsArtifice,
             disabled: false,
             impactsResultCount: true,
-            help: "This is for debugging purposes. Do not complain if you enable this. Reload after changing this setting.",
+            help: "调试用，刷新页面将重置。",
           },
         ],
       };

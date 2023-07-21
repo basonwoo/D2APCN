@@ -16,7 +16,7 @@
   -->
 
 <mat-toolbar color="warn" class="mat-elevation-z4 impossible-container" *ngIf="!allPossible">
-  Some of your chosen limitations contain no armor pieces and will yield no results.
+  当前护甲限制不包含任何结果
 </mat-toolbar>
 
 <div class="container">
@@ -45,7 +45,7 @@
 </div>
 
 <div id="clear-container">
-  <button (click)="clear()" color="warn" mat-stroked-button>Clear the whole selection</button>
+  <button (click)="clear()" color="warn" mat-stroked-button>清空</button>
 </div>
 <div class="minispace"></div>
 
@@ -53,7 +53,8 @@
   color="warn"
   class="mat-elevation-z4 impossible-container"
   *ngIf="disabledSlotLimitation">
-  The mod cost limitation is currently disabled. Modslot filtering still works.
+  模组费用限制目前已禁用，护甲插槽过滤仍然有效。
+  <!--The mod cost limitation is currently disabled. Modslot filtering still works.-->
 </mat-toolbar>
 <div class="minispace"></div>
 <mat-accordion>
@@ -61,9 +62,9 @@
     <mat-expansion-panel-header>
       <mat-panel-title>
         <mat-icon aria-hidden="false" inline>info</mat-icon>
-        Explanation
+        说明
       </mat-panel-title>
-      <mat-panel-description> Detailed instructions for this section. </mat-panel-description>
+      <mat-panel-description> 护甲限制功能详细说明 </mat-panel-description>
     </mat-expansion-panel-header>
     <div id="explanation-description">
       This section allows you to further finetune the results to your requirements.<br />
@@ -141,7 +142,7 @@
           <td>
             <app-armor-perk-icon [perk]="ArmorPerkOrSlot.SlotArtifice"></app-armor-perk-icon>
           </td>
-          <td>Artifice Modslot</td>
+          <td>诡计护甲模组</td>
           <td>
             <app-armor-perk-icon [perk]="ArmorPerkOrSlot.PerkIronBanner"></app-armor-perk-icon>
           </td>

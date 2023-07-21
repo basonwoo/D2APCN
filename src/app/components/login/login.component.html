@@ -19,92 +19,106 @@
   <mat-card-header>
     <div class="example-header-image" mat-card-avatar></div>
     <mat-card-title>Destiny 2 Armor Picker</mat-card-title>
-    <mat-card-subtitle>A simple armor min-max tool by Mijago.</mat-card-subtitle>
+    <mat-card-subtitle>
+      配装工具，由 Mijago 制作，萨勒你玛芬尼一半#9836 进行汉化
+    </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <p>
-      This tool allows you to select the optimal armor from your inventory and vault to satisfy your
-      stat needs. It also tells you which stat mods you have to use!
+      此工具允许你从装备栏和保险库中选择最佳的护甲搭配以满足您的六维需求
       <br />
       <br />
-      You have to log in to enable this tool to grab your armor from the API.<br />
-      If you like my tools and want to support me, head to
-      <a href="https://ko-fi.com/mijago" target="_blank">ko-fi.com</a> and buy me a coffee! ❤
+      要使用此工具，必须进行登录以从 Bungie API 获取你的护甲。
       <br />
-      If you found a bug or have a feature request, please open an issue
-      <a href="https://github.com/Mijago/D2ArmorPicker" target="_blank">in the Github Repository</a
-      >!
+      <br />
+      如果你觉得好用，可以前往
+      <a href="https://ko-fi.com/mijago" target="_blank">ko-fi.com</a> 打赏 Mijago ❤
+      <br />
+      如果你在使用过程中发现 bug 或者有更好的建议，请前往
+      <a href="https://github.com/Mijago/D2ArmorPicker" target="_blank">Github</a>
+      提 issue
+      <br />
+      如果你在使用过程中发现汉化错误，请前往
+      <a href="https://github.com/basonwoo/D2APCN" target="_blank">Github</a>
+      提 issue
     </p>
     <p>
-      D2ArmorPicker uses the Bungie.net api and it's OAuth authorization. You log in on an official
-      Bungie.net page and D2ArmorPicker receives a temporary login token from Bungie. That means it
-      does not receive your credentials.
+      D2ArmorPicker 使用 Bungie 的 API 及其 OAuth 授权，用户在 Bungie 官网登录之后，D2ArmorPicker
+      会从 Bungie 接收到一个临时登录令牌。这意味着 D2ArmorPicker 并不会实际获取你的账户凭据。
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button (click)="startLogin()" color="primary" mat-raised-button>Login</button>
+    <button (click)="startLogin()" color="primary" mat-raised-button>登录</button>
   </mat-card-actions>
 </mat-card>
 
 <mat-card>
-  <mat-card-title> Examples </mat-card-title>
-  <mat-card-subtitle>Some examples to show what D2ArmorPicker can do.</mat-card-subtitle>
+  <mat-card-title> 示例 </mat-card-title>
+  <mat-card-subtitle>D2ArmorPicker 的功能</mat-card-subtitle>
   <mat-card-content>
     <mat-accordion>
       <mat-expansion-panel class="mat-elevation-z11">
         <mat-expansion-panel-header>
-          <mat-panel-title> Stat Selection </mat-panel-title>
-          <mat-panel-description> The heart of this tool. </mat-panel-description>
+          <mat-panel-title> 属性优化 </mat-panel-title>
+          <mat-panel-description> 核心功能 </mat-panel-description>
         </mat-expansion-panel-header>
         <p>
-          First, you are able to select the stats you want. The tool will automatically parse all
+          首先，你可以选择自己想要达成的属性数值，D2ArmorPicker
+          会自动分析你所有的护甲，然后展示出所有可能的组合结果。
+          <!--First, you are able to select the stats you want. The tool will automatically parse all
           your armor (including your vault and your postmaster), and then show you which stat
           selections are even possible with your current gear. The tool also shows you all possible
-          loadouts with three or four stats at 100!
+          loadouts with three or four stats at 100!-->
           <img class="image-example" src="assets/info/statselection.png" />
           <br />
           <br />
-          There are also additional settings. You can add stasis fragments and negative and positive
+          你还可以预设好不同的星象碎片，此外，还可以选择 0 浪费模式，D2ArmorPicker
+          会自动添加属性模组以减少浪费。
+          <!--There are also additional settings. You can add stasis fragments and negative and positive
           stat mods to your builds. Also, you can select 0-waste builds (so only flat numbers).
-          D2ArmorPicker will also add stat mods to reduce wasted stats wherever possible!
+          D2ArmorPicker will also add stat mods to reduce wasted stats wherever possible!-->
         </p>
       </mat-expansion-panel>
 
       <mat-expansion-panel class="mat-elevation-z11">
         <mat-expansion-panel-header>
-          <mat-panel-title> Result Display </mat-panel-title>
-          <mat-panel-description> What you will get from this tool. </mat-panel-description>
+          <mat-panel-title> 展示结果 </mat-panel-title>
+          <mat-panel-description> 各种可选的护甲组合 </mat-panel-description>
         </mat-expansion-panel-header>
         <p>
-          D2ArmorPicker will show you a table with many results. You can sort and filter it, and
-          then you click on one row to see which items are needed for your desired stats.
+          D2ArmorPicker 会向你展示一个包含诸多护甲搭配的表格，你可以对表格进行排序
+          或者筛选，之后点击某一行来查看达成期望属性值所需要安装的模组。
+          <!--D2ArmorPicker will show you a table with many results. You can sort and filter it, and
+          then you click on one row to see which items are needed for your desired stats.-->
           <img class="image-example" src="assets/resultOverviewWithFlex.png" />
           <br />
           <br />
-          The page will also give you a detailed description of what you have to do in order to get
+          该页面还将详细说明要达成期望属性值你还需要做的操作，以下截图展示了更多细节：
+          <!--The page will also give you a detailed description of what you have to do in order to get
           to your desired build. The following screenshot shows one of the more detailed
-          descriptions:
+          descriptions:-->
           <img class="image-example" src="assets/info/whattodonow.png" />
         </p>
       </mat-expansion-panel>
 
       <mat-expansion-panel class="mat-elevation-z11">
         <mat-expansion-panel-header>
-          <mat-panel-title> Armor Clustering </mat-panel-title>
-          <mat-panel-description>
-            For the time when your vault is overflowing.
-          </mat-panel-description>
+          <mat-panel-title> 护甲集合 </mat-panel-title>
+          <mat-panel-description> 整理保险库 </mat-panel-description>
         </mat-expansion-panel-header>
         <div>
-          Since version 2.0.14, D2ArmorPicker has an armor clustering feature. This means that it
+          自 2.0.14 版本开始，D2ArmorPicker 新增了护甲集合功能，这会将所有护甲根据六维分布分为 25
+          组， 每一组中的护甲都会有相似的六维属性，这将可以帮助你清理仓库。
+          <!--Since version 2.0.14, D2ArmorPicker has an armor clustering feature. This means that it
           takes all your armor and groups it in 25 groups, where all items in one group has very
           similar stats. This can help you to clear out your vault, especially from duplicated armor
-          rolls.
+          rolls.-->
           <img class="image-example" src="assets/info/armorClustering.png" />
           <br />
           <br />
-          Take Cluster 1, for example. I copy the DIM-Query, enter it into DIM and see the following
-          results:
+          以集合 1 为例，我将集合 1 的 DIM 查询参数复制到 DIM 以后，可以很快找到这些护甲：
+          <!--Take Cluster 1, for example. I copy the DIM-Query, enter it into DIM and see the following
+          results:-->
           <div class="armor-image-container" fxLayoutGap="10px" fxLayout="row">
             <img src="assets/info/cluster-example/img.png" />
             <img src="assets/info/cluster-example/img_1.png" />

@@ -20,34 +20,34 @@ import { CharacterClass } from "../enum/character-Class";
 
 export const GrenadeAbilitiesPerClassAndTier: EnumDictionary<CharacterClass, string[]> = {
   [CharacterClass.Titan]: [
-    "Flux", // 182
-    "Glacier, Axion Bolt", // 152 / 2:32
-    "Coldsnap, Vortex, Scatter, Magnetic, Suppressor, Incendiary, Solar, Lightning, Pulse, Skip", // 121 / 2:01
-    "Void Wall, Thermite, Arc Bolt, Storm", // 105 / 1:45
-    "Void Spike, Tripmine, Swarm, Flashbang", // 91 / 1:31
-    "Healing", // 82 / 1:22
-    "Fusion", // 73 / 1:13
-    "Duskfield, Firebolt", // 64 / 1:04
+    "粘性电浆手雷", // 182
+    "冰川手雷, 量子光束", // 152 / 2:32
+    "急冻手雷, 涡流手雷, 散射手雷, 磁性手雷, 抑制手雷, 燃烧手雷, 烈日手雷, 闪电手雷, 脉冲手雷, 弹跳手雷", // 121 / 2:01
+    "虚空墙壁, 铝热手雷, 电光手雷, 风暴手雷", // 105 / 1:45
+    "虚空尖刺, 感应手雷, 蜂群手雷, 闪光手雷", // 91 / 1:31
+    "治愈手雷", // 82 / 1:22
+    "融合手雷", // 73 / 1:13
+    "暮域手雷, 烈焰手雷", // 64 / 1:04
   ],
   [CharacterClass.Hunter]: [
-    "Flux", // 182 / 3:02
-    "Glacier, Axion Bolt", // 152 / 2:32
-    "Coldsnap, Vortex, Scatter, Magnetic, Suppressor, Incendiary, Solar, Lightning, Pulse, Skip", // 121 / 2:01
-    "Void Wall, Thermite, Arc Bolt, Storm", // 105 / 1:45
-    "Void Spike, Tripmine, Swarm, Flashbang", // 91 / 1:31
-    "Healing", // 82 / 1:22
-    "Fusion", // 73 / 1:13
-    "Duskfield, Firebolt", // 64 / 1:04
+    "粘性电浆手雷", // 182 / 3:02
+    "冰川手雷, 量子光束", // 152 / 2:32
+    "急冻手雷, 涡流手雷, 散射手雷, 磁性手雷, 抑制手雷, 燃烧手雷, 烈日手雷, 闪电手雷, 脉冲手雷, 弹跳手雷", // 121 / 2:01
+    "虚空墙壁, 铝热手雷, 电光手雷, 风暴手雷", // 105 / 1:45
+    "虚空尖刺, 感应手雷, 蜂群手雷, 闪光手雷", // 91 / 1:31
+    "治愈手雷", // 82 / 1:22
+    "融合手雷", // 73 / 1:13
+    "暮域手雷, 烈焰手雷", // 64 / 1:04
   ],
   [CharacterClass.Warlock]: [
-    "Flux", // 182
-    "Glacier, Axion Bolt", // 152 / 2:32
-    "Coldsnap, Vortex, Scatter, Magnetic, Suppressor, Incendiary, Solar, Lightning, Pulse, Skip", // 121 / 2:01
-    "Void Wall, Thermite, Arc Bolt, Storm", // 105 / 1:45
-    "Void Spike, Tripmine, Swarm, Flashbang", // 91 / 1:31
-    "Healing", // 82 / 1:22
-    "Fusion", // 73 / 1:13
-    "Duskfield, Firebolt", // 64 / 1:04
+    "粘性电浆手雷", // 182
+    "冰川手雷, 量子光束", // 152 / 2:32
+    "急冻手雷, 涡流手雷, 散射手雷, 磁性手雷, 抑制手雷, 燃烧手雷, 烈日手雷, 闪电手雷, 脉冲手雷, 弹跳手雷", // 121 / 2:01
+    "虚空墙壁, 铝热手雷, 电光手雷, 风暴手雷", // 105 / 1:45
+    "虚空尖刺, 感应手雷, 蜂群手雷, 闪光手雷", // 91 / 1:31
+    "治愈手雷", // 82 / 1:22
+    "融合手雷", // 73 / 1:13
+    "暮域手雷, 烈焰手雷", // 64 / 1:04
   ],
   [CharacterClass.None]: ["", "", "", "", "", "", "", "", "", ""],
 };

@@ -21,17 +21,16 @@
     Please remove all negative/positive stat modifiers from the marked items.
   </mat-toolbar>
 
-  This table shows you the expected stats of any item:
   <table class="specificStatTable">
-    <thead>
+    <thead align="right">
       <tr>
-        <th>Name</th>
-        <th>Mobility</th>
-        <th>Resilience</th>
-        <th>Recovery</th>
-        <th>Discipline</th>
-        <th>Intellect</th>
-        <th>Strength</th>
+        <th>护甲</th>
+        <th>敏捷</th>
+        <th>韧性</th>
+        <th>恢复</th>
+        <th>纪律</th>
+        <th>智慧</th>
+        <th>力量</th>
         <th></th>
         <th></th>
       </tr>
@@ -44,7 +43,7 @@
             #tooltip="matTooltip"
             *ngIf="i.masterworked"
             class="item-name-mw"
-            matTooltip="This item is already masterworked."
+            matTooltip="此护甲已升级为大师杰作"
             >{{ i.name }}</u
           >
           <span *ngIf="!i.masterworked">{{ i.name }}</span>
@@ -108,7 +107,7 @@
             (click)="disableItem(i.itemInstanceId)"
             class="item-info-menu-btn"
             mat-icon-button
-            matTooltip="Disable this item from the results. It will not be used to generate results anymore, but you can always undo this.">
+            matTooltip="将护甲从所有结果中排除，可以随时撤销">
             <mat-icon>block</mat-icon>
           </button>
         </td>
@@ -159,8 +158,8 @@
     </ng-container>
     <!-- Class Item -->
     <tr *ngIf="config_assumeClassItemMasterworked">
-      <td #tooltip="matTooltip" class="item-name-mw" matTooltip="Class item should be masterworked."
-        >Any Class Item</td
+      <td #tooltip="matTooltip" class="item-name-mw" matTooltip="职业护甲需要升级至大师杰作"
+        >任意职业物品</td
       >
       <td class="text-mw">{{ 2 }}</td>
       <td class="text-mw">{{ 2 }}</td>
@@ -179,7 +178,7 @@
           (click)="disableAllItems()"
           class="item-info-menu-btn report-problem-icon"
           mat-icon-button
-          matTooltip="Disable all four items above from the results. They will not be used to generate results anymore, but you can always undo this.">
+          matTooltip="将上述四件护甲从所有结果中排除，可以随时撤销">
           <mat-icon>block</mat-icon>
         </button>
       </td>
@@ -201,7 +200,7 @@
     </tr>
     <!--Sum line without mods-->
     <tr *ngVar="element?.statsNoMods as stats" class="result-total-gear result-total highlight-row">
-      <td>Total (armor)</td>
+      <td>护甲当前属性</td>
       <td *ngIf="!!stats">
         {{ stats[ArmorStat.Mobility] }}
         <img
@@ -247,7 +246,7 @@
     </tr>
     <!-- Config Mods -->
     <tr class="result-config">
-      <td>Configuration</td>
+      <td>配置</td>
       <td
         ><span
           *ngIf="this.configValues[ArmorStat.Mobility] !== 0"
@@ -299,7 +298,7 @@
     </tr>
     <!-- +5 Mods -->
     <tr *ngVar="element?.mods as mods" class="highlight-row">
-      <td>Minor Mods</td>
+      <td>小型模组</td>
       <td *ngVar="mods | count : StatModifier.MINOR_MOBILITY as count">
         <span *ngIf="count > 0" class="positive">{{ count }}×5</span>
       </td>
@@ -321,7 +320,7 @@
     </tr>
     <!-- +10 Mods -->
     <tr *ngVar="element?.mods as mods">
-      <td>Major Mods</td>
+      <td>大型模组</td>
       <td *ngVar="mods | count : StatModifier.MAJOR_MOBILITY as count">
         <span *ngIf="count > 0" class="positive">{{ count }}×10</span>
       </td>
@@ -343,7 +342,7 @@
     </tr>
     <ng-container *ngVar="element?.artifice as mods">
       <tr>
-        <td>Artifice Mods</td>
+        <td>诡计护甲模组</td>
         <td *ngVar="mods | count : StatModifier.ARTIFICE_MOBILITY as count">
           <span *ngIf="count > 0" class="positive">{{ count }}×3</span>
         </td>
@@ -367,7 +366,7 @@
 
     <!-- Final sum line -->
     <tr *ngVar="element?.stats as stats" class="result-total-all result-total highlight-row">
-      <td>Total</td>
+      <td>总属性</td>
       <td>
         {{ stats[ArmorStat.Mobility] }}
         <img
@@ -415,8 +414,8 @@
 </div>
 <ng-container *ngVar="calculateRequiredMasterworkCost() as cost">
   <div *ngIf="cost['total'] > 0" style="margin-top: 10px">
-    Total material cost:
-    <span *ngIf="cost['glimmer'] > 0" class="currency-icon-container" matTooltip="Glimmer">
+    一共需要花费的材料:
+    <span *ngIf="cost['glimmer'] > 0" class="currency-icon-container" matTooltip="微光">
       <img
         alt="Glimmer"
         class="currency-icon"
@@ -424,7 +423,7 @@
       {{ cost["glimmer"] | number }}
     </span>
 
-    <span *ngIf="cost['shards'] > 0" class="currency-icon-container" matTooltip="Legendary Shards">
+    <span *ngIf="cost['shards'] > 0" class="currency-icon-container" matTooltip="传说碎片">
       <img
         alt="Legendary Shards"
         class="currency-icon"
@@ -432,7 +431,7 @@
       {{ cost["shards"] }}
     </span>
 
-    <span *ngIf="cost['core'] > 0" class="currency-icon-container" matTooltip="Enhancement Cores">
+    <span *ngIf="cost['core'] > 0" class="currency-icon-container" matTooltip="强化核心">
       <img
         alt="Enhancement Cores"
         class="currency-icon"
@@ -440,7 +439,7 @@
       {{ cost["core"] }}
     </span>
 
-    <span *ngIf="cost['prism'] > 0" class="currency-icon-container" matTooltip="Enhancement Prism">
+    <span *ngIf="cost['prism'] > 0" class="currency-icon-container" matTooltip="增强棱镜">
       <img
         alt="Enhancement Prism"
         class="currency-icon"
@@ -448,7 +447,7 @@
       {{ cost["prism"] }}
     </span>
 
-    <span *ngIf="cost['ascshard'] > 0" class="currency-icon-container" matTooltip="Ascendant Shard">
+    <span *ngIf="cost['ascshard'] > 0" class="currency-icon-container" matTooltip="上维碎片">
       <img
         alt="Ascendant Shard"
         class="currency-icon"
@@ -465,52 +464,51 @@
       [cdkCopyToClipboard]="text"
       color="primary"
       mat-raised-button
-      matTooltip="Use this button to copy a DIM search query to your clip board. It allows you to search the given items in DIM.">
-      Copy DIM query to clipboard
+      matTooltip="将查询参数粘贴到 DIM 搜索框以检视此 build 列出的护甲">
+      复制 DIM 查询参数
     </button>
   </ng-container>
   <button
     (click)="goToDIM()"
     color="primary"
     mat-raised-button
-    matTooltip="Use this button to open this build as a DIM Loadout.">
-    Open Loadout in DIM
+    matTooltip="点击在 DIM 中打开此配装">
+    前往 DIM 配装
   </button>
   <br />
-  <small>The following two buttons may not work for some at the moment:</small><br />
+  <small>实验性功能:</small><br />
   <button
     (click)="moveItems()"
     mat-stroked-button
-    matTooltip="Click this button to move Items to your inventory. Make sure that you have enough space in your inventory. This tool will not move any items out of your inventory.">
-    Move items to inventory (beta)
+    matTooltip="单击此按钮可将物品移至你的装备栏中，请确保你的装备栏中有足够的空位">
+    移动至角色装备栏
   </button>
   <button
     (click)="moveItems(true)"
     mat-stroked-button
-    matTooltip="Click this button to equip the Items. Make sure that you have enough space in your inventory. This tool will not move any items out of your inventory.">
-    Equip Items (beta)
+    matTooltip="单击此按钮可以装备物品，请确保你的装备栏中有足够的空位">
+    装备
   </button>
 </div>
 
 <mat-accordion>
   <mat-expansion-panel class="mat-elevation-z6">
     <mat-expansion-panel-header>
-      <mat-panel-title> What to do now? </mat-panel-title>
-      <mat-panel-description>
-        Detailed Instructions of to get your loadout ready.
-      </mat-panel-description>
+      <mat-panel-title> 接下来呢？ </mat-panel-title>
+      <mat-panel-description> 遵循以下步骤以完成你的配装 </mat-panel-description>
     </mat-expansion-panel-header>
     <div>
       <ol>
         <li>
-          Move all related items into your inventory
-          <span *ngIf="config_assumeClassItemMasterworked"> and use a masterworked class item</span
-          >.
+          将所有相关护甲移动到你的装备栏
+          <span *ngIf="config_assumeClassItemMasterworked">
+            并且装备一件升级到大师杰作的职业物品
+          </span>
         </li>
         <!-- Masterwork and elements -->
         <ng-container *ngVar="getItemsThatMustBeMasterworked() as mwItems">
           <li *ngIf="mwItems.length > 0">
-            Masterwork these items:
+            将以下物品升级到大师杰作：
             <ul>
               <li *ngFor="let item1 of mwItems">
                 {{ item1.name }}
@@ -524,16 +522,16 @@
           *ngIf="
             $any(element?.mods).length > 0 && ($any(element?.mods) | count : StatModifier.NONE) < 5
           "
-          >Equip the following stat mods:
+          >装备以下属性模组:
           <ul *ngVar="element?.mods as mods">
             <!-- MOBILITY -->
             <ng-container *ngVar="mods | count : StatModifier.MINOR_MOBILITY as minorCount">
               <ng-container *ngVar="mods | count : StatModifier.MAJOR_MOBILITY as majorCount">
                 <li *ngIf="minorCount + majorCount > 0" class="positive">
-                  <span *ngIf="minorCount > 0">{{ minorCount }} minor</span>
+                  <span *ngIf="minorCount > 0">{{ minorCount }}x 小型敏捷模组</span>
                   <ng-container *ngIf="minorCount > 0 && majorCount > 0"> and</ng-container>
-                  <span *ngIf="majorCount > 0"> {{ majorCount }} major </span>
-                  Mobility Mod<ng-container *ngIf="minorCount + majorCount > 1">s</ng-container>
+                  <span *ngIf="majorCount > 0"> {{ majorCount }}x </span>
+                  敏捷模组
                 </li>
               </ng-container>
             </ng-container>
@@ -542,10 +540,10 @@
             <ng-container *ngVar="mods | count : StatModifier.MINOR_RESILIENCE as minorCount">
               <ng-container *ngVar="mods | count : StatModifier.MAJOR_RESILIENCE as majorCount">
                 <li *ngIf="minorCount + majorCount > 0" class="positive">
-                  <span *ngIf="minorCount > 0">{{ minorCount }} minor</span>
+                  <span *ngIf="minorCount > 0">{{ minorCount }}x 小型韧性模组</span>
                   <ng-container *ngIf="minorCount > 0 && majorCount > 0"> and</ng-container>
-                  <span *ngIf="majorCount > 0"> {{ majorCount }} major </span>
-                  Resilience Mod<ng-container *ngIf="minorCount + majorCount > 1">s</ng-container>
+                  <span *ngIf="majorCount > 0"> {{ majorCount }}x </span>
+                  韧性模组
                 </li>
               </ng-container>
             </ng-container>
@@ -554,10 +552,10 @@
             <ng-container *ngVar="mods | count : StatModifier.MINOR_RECOVERY as minorCount">
               <ng-container *ngVar="mods | count : StatModifier.MAJOR_RECOVERY as majorCount">
                 <li *ngIf="minorCount + majorCount > 0" class="positive">
-                  <span *ngIf="minorCount > 0">{{ minorCount }} minor</span>
+                  <span *ngIf="minorCount > 0">{{ minorCount }}x 小型恢复模组</span>
                   <ng-container *ngIf="minorCount > 0 && majorCount > 0"> and</ng-container>
-                  <span *ngIf="majorCount > 0"> {{ majorCount }} major </span>
-                  Recovery Mod<ng-container *ngIf="minorCount + majorCount > 1">s</ng-container>
+                  <span *ngIf="majorCount > 0"> {{ majorCount }}x </span>
+                  恢复模组
                 </li>
               </ng-container>
             </ng-container>
@@ -566,10 +564,10 @@
             <ng-container *ngVar="mods | count : StatModifier.MINOR_DISCIPLINE as minorCount">
               <ng-container *ngVar="mods | count : StatModifier.MAJOR_DISCIPLINE as majorCount">
                 <li *ngIf="minorCount + majorCount > 0" class="positive">
-                  <span *ngIf="minorCount > 0">{{ minorCount }} minor</span>
+                  <span *ngIf="minorCount > 0">{{ minorCount }}x 小型纪律模组</span>
                   <ng-container *ngIf="minorCount > 0 && majorCount > 0"> and</ng-container>
-                  <span *ngIf="majorCount > 0"> {{ majorCount }} major </span>
-                  Discipline Mod<ng-container *ngIf="minorCount + majorCount > 1">s</ng-container>
+                  <span *ngIf="majorCount > 0"> {{ majorCount }}x </span>
+                  纪律模组
                 </li>
               </ng-container>
             </ng-container>
@@ -578,10 +576,10 @@
             <ng-container *ngVar="mods | count : StatModifier.MINOR_INTELLECT as minorCount">
               <ng-container *ngVar="mods | count : StatModifier.MAJOR_INTELLECT as majorCount">
                 <li *ngIf="minorCount + majorCount > 0" class="positive">
-                  <span *ngIf="minorCount > 0">{{ minorCount }} minor</span>
+                  <span *ngIf="minorCount > 0">{{ minorCount }}x 小型智慧模组</span>
                   <ng-container *ngIf="minorCount > 0 && majorCount > 0"> and</ng-container>
-                  <span *ngIf="majorCount > 0"> {{ majorCount }} major </span>
-                  Intellect Mod<ng-container *ngIf="minorCount + majorCount > 1">s</ng-container>
+                  <span *ngIf="majorCount > 0"> {{ majorCount }}x </span>
+                  智慧模组
                 </li>
               </ng-container>
             </ng-container>
@@ -590,10 +588,10 @@
             <ng-container *ngVar="mods | count : StatModifier.MINOR_STRENGTH as minorCount">
               <ng-container *ngVar="mods | count : StatModifier.MAJOR_STRENGTH as majorCount">
                 <li *ngIf="minorCount + majorCount > 0" class="positive">
-                  <span *ngIf="minorCount > 0">{{ minorCount }} minor</span>
+                  <span *ngIf="minorCount > 0">{{ minorCount }}x 小型力量模组</span>
                   <ng-container *ngIf="minorCount > 0 && majorCount > 0"> and</ng-container>
-                  <span *ngIf="majorCount > 0"> {{ majorCount }} major </span>
-                  Strength Mod<ng-container *ngIf="minorCount + majorCount > 1">s</ng-container>
+                  <span *ngIf="majorCount > 0"> {{ majorCount }}x </span>
+                  力量模组
                 </li>
               </ng-container>
             </ng-container>
@@ -639,14 +637,12 @@
   </mat-expansion-panel>
   <mat-expansion-panel class="mat-elevation-z6">
     <mat-expansion-panel-header>
-      <mat-panel-title> Stat overview </mat-panel-title>
-      <mat-panel-description>
-        Shows a summary of all the stats and where they come from.
-      </mat-panel-description>
+      <mat-panel-title> 属性总览 </mat-panel-title>
+      <mat-panel-description> 查看所有属性来源 </mat-panel-description>
     </mat-expansion-panel-header>
     <table class="stat-preview">
       <tr>
-        <td colspan="2">Stat</td>
+        <td colspan="2">属性</td>
         <td class="tier-column">1</td>
         <td class="tier-column">2</td>
         <td class="tier-column">3</td>
@@ -657,7 +653,7 @@
         <td class="tier-column">8</td>
         <td class="tier-column">9</td>
         <td class="tier-column">10</td>
-        <td>Tiers</td>
+        <td>等级</td>
       </tr>
       <tr *ngFor="let statId of armorStatIds">
         <td>{{ ArmorStatNames[statId] }}</td>
@@ -673,22 +669,22 @@
         <td class="sum-tiers">{{ getTiersForStat(statId) }}</td>
       </tr>
       <tr class="legend">
-        <td colspan="2">Armor</td>
+        <td colspan="2">护甲</td>
         <td>
           <div class="energy-bar normal"></div>
         </td>
-        <td colspan="3">Stat Mod</td>
+        <td colspan="3">属性模组</td>
         <td>
           <div class="energy-bar mod"></div>
         </td>
-        <td colspan="4">Fragments & Mods</td>
+        <td colspan="4">星象碎片</td>
         <td>
           <div class="energy-bar config"></div>
         </td>
       </tr>
       <ng-container *ngVar="element?.exotic as exotic">
         <tr *ngIf="exotic[0]">
-          <td>Exotic:</td>
+          <td>异域护甲:</td>
           <td colspan="10">{{ exotic[0].name }}</td>
           <td colspan="1">
             <div class="item-icon-container">

@@ -19,13 +19,13 @@
   <div class="tooltip-container">
     <table>
       <tr>
-        <td class="exotic-name" colspan="3">{{ ArmorStatNames[stat] }} at Tier {{ tier }}</td>
+        <td class="exotic-name" colspan="3">{{ tier }} 级 {{ ArmorStatNames[stat] }}</td>
       </tr>
       <tr>
-        <th style="min-width: 50px">Stat</th>
-        <th style="min-width: 50px">Tier {{ tier }}</th>
+        <th style="min-width: 50px">属性</th>
+        <th style="min-width: 50px">等级 {{ tier }}</th>
         <th style="min-width: 50px" colspan="2" *ngIf="differenceTier !== tier"
-          >∆ Tier {{ differenceTier }}</th
+          >相较等级 {{ differenceTier }}</th
         >
       </tr>
 

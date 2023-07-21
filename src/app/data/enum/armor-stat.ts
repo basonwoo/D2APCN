@@ -73,12 +73,12 @@ export const STAT_MOD_VALUES: EnumDictionary<StatModifier, [ArmorStat, number, n
 };
 
 export const ArmorStatNames: EnumDictionary<ArmorStat, string> = {
-  [ArmorStat.Mobility]: "Mobility",
-  [ArmorStat.Resilience]: "Resilience",
-  [ArmorStat.Recovery]: "Recovery",
-  [ArmorStat.Discipline]: "Discipline",
-  [ArmorStat.Intellect]: "Intellect",
-  [ArmorStat.Strength]: "Strength",
+  [ArmorStat.Mobility]: "敏捷",
+  [ArmorStat.Resilience]: "韧性",
+  [ArmorStat.Recovery]: "恢复",
+  [ArmorStat.Discipline]: "纪律",
+  [ArmorStat.Intellect]: "智慧",
+  [ArmorStat.Strength]: "力量",
 };
 export const ArmorStatIconUrls: EnumDictionary<ArmorStat, string> = {
   [ArmorStat.Mobility]:
@@ -125,23 +125,23 @@ export enum ArmorPerkOrSlot {
 }
 
 export const ArmorPerkOrSlotNames: EnumDictionary<ArmorPerkOrSlot, string> = {
-  [ArmorPerkOrSlot.None]: "None",
-  [ArmorPerkOrSlot.GuardianGamesClassItem]: "Guardian Games",
-  [ArmorPerkOrSlot.SlotNightmare]: "Nightmare Hunt Modslot",
-  [ArmorPerkOrSlot.SlotArtifice]: "Artifice Modslot",
-  [ArmorPerkOrSlot.SlotLastWish]: "Last Wish Modslot",
-  [ArmorPerkOrSlot.SlotGardenOfSalvation]: "Garden of Salvation Modslot",
-  [ArmorPerkOrSlot.SlotDeepStoneCrypt]: "Deep Stone Crypt Modslot",
-  [ArmorPerkOrSlot.SlotVaultOfGlass]: "Vault of Glass Modslot",
-  [ArmorPerkOrSlot.SlotVowOfTheDisciple]: "Vow of the Disciple Modslot",
-  [ArmorPerkOrSlot.PerkIronBanner]: "Iron Banner Perk",
-  [ArmorPerkOrSlot.PerkUniformedOfficer]: "Uniformed Officer",
-  [ArmorPerkOrSlot.SlotKingsFall]: "King's Fall Modslot",
-  [ArmorPerkOrSlot.PerkPlunderersTrappings]: "Plunderer's Trappings",
-  [ArmorPerkOrSlot.SeraphSensorArray]: "Seraph Sensor Array",
-  [ArmorPerkOrSlot.SlotRootOfNightmares]: "Root of Nightmares Modslot",
-  [ArmorPerkOrSlot.PerkQueensFavor]: "Queen's Favor",
-  [ArmorPerkOrSlot.SonarAmplifier]: "Sonar Amplifier",
+  [ArmorPerkOrSlot.None]: "无",
+  [ArmorPerkOrSlot.GuardianGamesClassItem]: "守护者游戏",
+  [ArmorPerkOrSlot.SlotNightmare]: "梦魇模组",
+  [ArmorPerkOrSlot.SlotArtifice]: "诡计护甲模组",
+  [ArmorPerkOrSlot.SlotLastWish]: "最后一愿突袭模组",
+  [ArmorPerkOrSlot.SlotGardenOfSalvation]: "救赎花园突袭模组",
+  [ArmorPerkOrSlot.SlotDeepStoneCrypt]: "深岩墓室突袭模组",
+  [ArmorPerkOrSlot.SlotVaultOfGlass]: "玻璃拱顶护甲模组",
+  [ArmorPerkOrSlot.SlotVowOfTheDisciple]: "门徒誓约突袭模组",
+  [ArmorPerkOrSlot.PerkIronBanner]: "钢铁领主的骄傲",
+  [ArmorPerkOrSlot.PerkUniformedOfficer]: "苏生赛季加成",
+  [ArmorPerkOrSlot.SlotKingsFall]: "国王的陨落模组",
+  [ArmorPerkOrSlot.PerkPlunderersTrappings]: "侠盗赛季加成",
+  [ArmorPerkOrSlot.SeraphSensorArray]: "炽天使赛季加成",
+  [ArmorPerkOrSlot.SlotRootOfNightmares]: "梦魇根源护甲模组",
+  [ArmorPerkOrSlot.PerkQueensFavor]: "女王的恩惠",
+  [ArmorPerkOrSlot.SonarAmplifier]: "声纳放大器",
   [ArmorPerkOrSlot.COUNT]: "",
 };
 export const ArmorPerkOrSlotIcons: EnumDictionary<ArmorPerkOrSlot, string> = {

@@ -17,73 +17,69 @@
 
 <div id="card-config">
   <mat-card>
-    <mat-card-title>Character Selection</mat-card-title>
+    <mat-card-title>选择职业</mat-card-title>
     <mat-card-content id="content-char-selection">
       <app-desired-class-selection></app-desired-class-selection>
     </mat-card-content>
   </mat-card>
   <mat-card>
-    <mat-card-title>Select the stats you want to achieve</mat-card-title>
-    <mat-card-subtitle>The heart of this tool. Select the stats you want!</mat-card-subtitle>
+    <mat-card-title>选择属性</mat-card-title>
+    <mat-card-subtitle>核心功能，选择你想要达成的属性值</mat-card-subtitle>
     <mat-card-content>
       <app-desired-stat-selection></app-desired-stat-selection>
     </mat-card-content>
   </mat-card>
   <mat-card>
-    <mat-card-title>Exotic</mat-card-title>
+    <mat-card-title>异域装备</mat-card-title>
     <mat-card-subtitle>
-      If you want, limit all results to an exotic. Use this to create a build around an exotic.<br />
-      Exotics you do not have in the inventory or vault are grayed out.
+      选定一件异域装备并围绕该装备打造一套 Build<br />
+      装备栏以及保险库中没有或者未解锁的装备不可选
     </mat-card-subtitle>
     <mat-card-content>
       <app-desired-exotic-selection></app-desired-exotic-selection>
     </mat-card-content>
   </mat-card>
   <mat-card>
-    <mat-card-title>Armor limitation</mat-card-title>
+    <mat-card-title>护甲限制</mat-card-title>
     <mat-card-subtitle>
-      This section allows you to further specify what kind of armor and mods you want.
+      你可以进一步指定要使用哪种护甲和模组。
+      <!--This section allows you to further specify what kind of armor and mods you want.-->
     </mat-card-subtitle>
     <mat-card-content>
       <app-desired-mod-selection></app-desired-mod-selection>
     </mat-card-content>
   </mat-card>
   <mat-card>
-    <mat-card-title>Stat-Boost Selection</mat-card-title>
+    <mat-card-title>星象碎片</mat-card-title>
     <mat-card-subtitle
-      >Select Mods and Skills that affect your overall stats.<br />
-      Please note that D2AP also allows theoretical, but impossible input.<br />
-      <b>Only fragments that affect stats are shown.</b></mat-card-subtitle
-    >
+      >选择影响属性的星象碎片<br />
+      <!--Please note that D2AP also allows theoretical, but impossible input.<br />
+      <b>Only fragments that affect stats are shown.</b>-->
+    </mat-card-subtitle>
     <mat-card-content>
       <app-desired-mods-selection></app-desired-mods-selection>
     </mat-card-content>
   </mat-card>
   <mat-card>
-    <mat-card-title>Advanced Settings</mat-card-title>
-    <mat-card-subtitle
-      >More settings! Use them to fine-tune your buildcrafting process.</mat-card-subtitle
-    >
+    <mat-card-title>高级设置</mat-card-title>
+    <mat-card-subtitle>这些设置可以帮助你进行微调</mat-card-subtitle>
     <mat-card-content>
       <app-advanced-settings></app-advanced-settings>
     </mat-card-content>
   </mat-card>
   <mat-card>
-    <mat-card-title>Disabled Armor Pieces</mat-card-title>
+    <mat-card-title>已禁用的护甲</mat-card-title>
     <mat-card-subtitle>
-      These armor pieces are disabled. Click them to enable them again.<br />
-      They won't show up in any results.<br />
-      You can disable items in the detailed result overview.
+      这些护甲已被禁用，点击已重新启用。<br />
+      他们不会出现在任何结果中。<br />
     </mat-card-subtitle>
     <mat-card-content>
       <app-ignored-items-list></app-ignored-items-list>
     </mat-card-content>
   </mat-card>
   <mat-card>
-    <mat-card-title>Configuration Management</mat-card-title>
-    <mat-card-subtitle
-      >Save and load your buildcrafting settings for another day!</mat-card-subtitle
-    >
+    <mat-card-title>配置管理</mat-card-title>
+    <mat-card-subtitle>保存你的设置以供日后使用</mat-card-subtitle>
     <mat-card-content>
       <app-load-and-save-settings></app-load-and-save-settings>
     </mat-card-content>

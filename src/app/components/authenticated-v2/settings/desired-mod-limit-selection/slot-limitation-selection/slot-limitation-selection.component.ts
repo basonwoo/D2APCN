@@ -107,15 +107,15 @@ export class SlotLimitationSelectionComponent implements OnInit, OnDestroy, Afte
   get slotName(): string {
     switch (this.slot) {
       case ArmorSlot.ArmorSlotHelmet:
-        return "Helmet";
+        return "头盔";
       case ArmorSlot.ArmorSlotGauntlet:
-        return "Gauntlet";
+        return "臂铠";
       case ArmorSlot.ArmorSlotChest:
-        return "Chest";
+        return "胸部护甲";
       case ArmorSlot.ArmorSlotLegs:
-        return "Leg";
+        return "腿部护甲";
       case ArmorSlot.ArmorSlotClass:
-        return "Class Item";
+        return "职业物品";
       default:
         return "";
     }

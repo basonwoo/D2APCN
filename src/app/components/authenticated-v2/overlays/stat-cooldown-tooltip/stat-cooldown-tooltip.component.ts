@@ -55,43 +55,43 @@ function reformatTimeMMMSS(time: number) {
 const CooldownInfo: EnumDictionary<ArmorStat, CooldownEntry[]> = {
   [ArmorStat.Mobility]: [
     {
-      name: "Speed increase",
+      name: "速度加成",
       benefitDirection: BenefitDirection.Positive,
       valueFunction: (t) => t * 0.04,
       formatting: (t) => Math.floor(t * 100) + "%",
     },
     {
-      name: "Walking Speed",
+      name: "步行移动速度",
       benefitDirection: BenefitDirection.Positive,
       valueFunction: (t) => 5 * (1 + t * 0.04),
       formatting: speedTextFormatter,
     },
     {
-      name: "Strafe Speed",
+      name: "侧向移动速度",
       benefitDirection: BenefitDirection.Positive,
       valueFunction: (t) => 4.25 * (1 + t * 0.04),
       formatting: speedTextFormatter,
     },
     {
-      name: "Crouch Speed",
+      name: "蹲伏移动速度",
       benefitDirection: BenefitDirection.Positive,
       valueFunction: (t) => 2.75 * (1 + t * 0.04),
       formatting: speedTextFormatter,
     },
     {
-      name: "Marksman Dodge",
+      name: "射手闪身",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => 29 * CLASS_COOLDOWN_RATIO_PER_TIER[t],
       formatting: (t) => reformatTimeMMMSS(t),
     },
     {
-      name: "Gamblers Dodge",
+      name: "赌徒闪身",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => 38 * CLASS_COOLDOWN_RATIO_PER_TIER[t],
       formatting: (t) => reformatTimeMMMSS(t),
     },
     {
-      name: "Acrobat's Dodge",
+      name: "特技闪身",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => 82 * CLASS_COOLDOWN_RATIO_PER_TIER[t],
       formatting: (t) => reformatTimeMMMSS(t),
@@ -99,31 +99,31 @@ const CooldownInfo: EnumDictionary<ArmorStat, CooldownEntry[]> = {
   ],
   [ArmorStat.Resilience]: [
     {
-      name: "Hitpoints",
+      name: "总生命值",
       benefitDirection: BenefitDirection.Positive,
       valueFunction: (t) => [185, 186, 187, 188, 189, 190, 192, 194, 196, 198, 200][t],
       formatting: (t) => t.toString(),
     },
     {
-      name: "PvE Damage Reduction",
+      name: "PvE 伤害减免",
       benefitDirection: BenefitDirection.Positive,
       valueFunction: (t) => [0, 1, 2, 3, 4, 8, 14, 20, 26, 32, 40][t] / 100,
       formatting: (t) => Math.floor(t * 100) + "%",
     },
     {
-      name: "Rally Barricade",
+      name: "集结屏障",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => 32 * CLASS_COOLDOWN_RATIO_PER_TIER[t],
       formatting: (t) => reformatTimeMMMSS(t),
     },
     {
-      name: "Towering Barricade",
+      name: "巍峨屏障",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => 40 * CLASS_COOLDOWN_RATIO_PER_TIER[t],
       formatting: (t) => reformatTimeMMMSS(t),
     },
     {
-      name: "Bastion Barricade",
+      name: "堡垒护盾",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => 82 * CLASS_COOLDOWN_RATIO_PER_TIER[t],
       formatting: (t) => reformatTimeMMMSS(t),
@@ -131,13 +131,13 @@ const CooldownInfo: EnumDictionary<ArmorStat, CooldownEntry[]> = {
   ],
   [ArmorStat.Recovery]: [
     {
-      name: "Regeneration time",
+      name: "恢复满生命值耗时",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => [9, 8.8, 8.6, 8.4, 8.2, 8.0, 7.8, 7.4, 7.0, 6.6, 6.0][t],
       formatting: (t) => (Math.round(t * 100) / 100).toFixed(1) + "s",
     },
     {
-      name: "Rift",
+      name: "裂痕",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => 82 * CLASS_COOLDOWN_RATIO_PER_TIER[t],
       formatting: (t) => reformatTimeMMMSS(t),
@@ -145,7 +145,7 @@ const CooldownInfo: EnumDictionary<ArmorStat, CooldownEntry[]> = {
   ],
   [ArmorStat.Discipline]: [
     {
-      name: "Tier 1",
+      name: "1 级",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => Math.round(182 * ABILITY_COOLDOWN_RATIO_PER_TIER[t]),
       formatting: (t) => reformatTimeMMMSS(t),
@@ -157,7 +157,7 @@ const CooldownInfo: EnumDictionary<ArmorStat, CooldownEntry[]> = {
       },
     },
     {
-      name: "Tier 2",
+      name: "2 级",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => Math.round(152 * ABILITY_COOLDOWN_RATIO_PER_TIER[t]),
       formatting: (t) => reformatTimeMMMSS(t),
@@ -169,7 +169,7 @@ const CooldownInfo: EnumDictionary<ArmorStat, CooldownEntry[]> = {
       },
     },
     {
-      name: "Tier 3",
+      name: "3 级",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => Math.round(121 * ABILITY_COOLDOWN_RATIO_PER_TIER[t]),
       formatting: (t) => reformatTimeMMMSS(t),
@@ -181,7 +181,7 @@ const CooldownInfo: EnumDictionary<ArmorStat, CooldownEntry[]> = {
       },
     },
     {
-      name: "Tier 4",
+      name: "4 级",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => Math.round(105 * ABILITY_COOLDOWN_RATIO_PER_TIER[t]),
       formatting: (t) => reformatTimeMMMSS(t),
@@ -193,7 +193,7 @@ const CooldownInfo: EnumDictionary<ArmorStat, CooldownEntry[]> = {
       },
     },
     {
-      name: "Tier 5",
+      name: "5 级",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => Math.round(91 * ABILITY_COOLDOWN_RATIO_PER_TIER[t]),
       formatting: (t) => reformatTimeMMMSS(t),
@@ -205,7 +205,7 @@ const CooldownInfo: EnumDictionary<ArmorStat, CooldownEntry[]> = {
       },
     },
     {
-      name: "Tier 6",
+      name: "6 级",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => Math.round(82 * ABILITY_COOLDOWN_RATIO_PER_TIER[t]),
       formatting: (t) => reformatTimeMMMSS(t),
@@ -217,7 +217,7 @@ const CooldownInfo: EnumDictionary<ArmorStat, CooldownEntry[]> = {
       },
     },
     {
-      name: "Tier 7",
+      name: "7 级",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => Math.round(73 * ABILITY_COOLDOWN_RATIO_PER_TIER[t]),
       formatting: (t) => reformatTimeMMMSS(t),
@@ -229,7 +229,7 @@ const CooldownInfo: EnumDictionary<ArmorStat, CooldownEntry[]> = {
       },
     },
     {
-      name: "Tier 8",
+      name: "8 级",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => Math.round(64 * ABILITY_COOLDOWN_RATIO_PER_TIER[t]),
       formatting: (t) => reformatTimeMMMSS(t),
@@ -243,7 +243,7 @@ const CooldownInfo: EnumDictionary<ArmorStat, CooldownEntry[]> = {
   ],
   [ArmorStat.Intellect]: [
     {
-      name: "Tier 1",
+      name: "1 级",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => Math.round(625 * SUPER_COOLDOWN_RATIO_PER_TIER[t]),
       formatting: (t) => reformatTimeMMMSS(t),
@@ -255,7 +255,7 @@ const CooldownInfo: EnumDictionary<ArmorStat, CooldownEntry[]> = {
       },
     },
     {
-      name: "Tier 2",
+      name: "2 级",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => Math.round(556 * SUPER_COOLDOWN_RATIO_PER_TIER[t]),
       formatting: (t) => reformatTimeMMMSS(t),
@@ -267,7 +267,7 @@ const CooldownInfo: EnumDictionary<ArmorStat, CooldownEntry[]> = {
       },
     },
     {
-      name: "Tier 3",
+      name: "3 级",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => Math.round(500 * SUPER_COOLDOWN_RATIO_PER_TIER[t]),
       formatting: (t) => reformatTimeMMMSS(t),
@@ -279,7 +279,7 @@ const CooldownInfo: EnumDictionary<ArmorStat, CooldownEntry[]> = {
       },
     },
     {
-      name: "Tier 4",
+      name: "4 级",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => Math.round(455 * SUPER_COOLDOWN_RATIO_PER_TIER[t]),
       formatting: (t) => reformatTimeMMMSS(t),
@@ -291,7 +291,7 @@ const CooldownInfo: EnumDictionary<ArmorStat, CooldownEntry[]> = {
       },
     },
     {
-      name: "Tier 5",
+      name: "5 级",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => Math.round(417 * SUPER_COOLDOWN_RATIO_PER_TIER[t]),
       formatting: (t) => reformatTimeMMMSS(t),
@@ -305,7 +305,7 @@ const CooldownInfo: EnumDictionary<ArmorStat, CooldownEntry[]> = {
   ],
   [ArmorStat.Strength]: [
     {
-      name: "Tier 1",
+      name: "1 级",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => Math.round(113 * ABILITY_COOLDOWN_RATIO_PER_TIER[t]),
       formatting: (t) => reformatTimeMMMSS(t),
@@ -317,7 +317,7 @@ const CooldownInfo: EnumDictionary<ArmorStat, CooldownEntry[]> = {
       },
     },
     {
-      name: "Tier 2",
+      name: "2 级",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => Math.round(109 * ABILITY_COOLDOWN_RATIO_PER_TIER[t]),
       formatting: (t) => reformatTimeMMMSS(t),
@@ -329,7 +329,7 @@ const CooldownInfo: EnumDictionary<ArmorStat, CooldownEntry[]> = {
       },
     },
     {
-      name: "Tier 3",
+      name: "3 级",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => Math.round(106 * ABILITY_COOLDOWN_RATIO_PER_TIER[t]),
       formatting: (t) => reformatTimeMMMSS(t),
@@ -341,7 +341,7 @@ const CooldownInfo: EnumDictionary<ArmorStat, CooldownEntry[]> = {
       },
     },
     {
-      name: "Tier 4",
+      name: "4 级",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => Math.round(100 * ABILITY_COOLDOWN_RATIO_PER_TIER[t]),
       formatting: (t) => reformatTimeMMMSS(t),
@@ -353,7 +353,7 @@ const CooldownInfo: EnumDictionary<ArmorStat, CooldownEntry[]> = {
       },
     },
     {
-      name: "Tier 5",
+      name: "5 级",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => Math.round(90 * ABILITY_COOLDOWN_RATIO_PER_TIER[t]),
       formatting: (t) => reformatTimeMMMSS(t),
@@ -365,7 +365,7 @@ const CooldownInfo: EnumDictionary<ArmorStat, CooldownEntry[]> = {
       },
     },
     {
-      name: "Tier 6",
+      name: "6 级",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => Math.round(82 * ABILITY_COOLDOWN_RATIO_PER_TIER[t]),
       formatting: (t) => reformatTimeMMMSS(t),
@@ -377,7 +377,7 @@ const CooldownInfo: EnumDictionary<ArmorStat, CooldownEntry[]> = {
       },
     },
     {
-      name: "Tier 7",
+      name: "7 级",
       benefitDirection: BenefitDirection.Negative,
       valueFunction: (t) => Math.round(45 * ABILITY_COOLDOWN_RATIO_PER_TIER[t]),
       formatting: (t) => reformatTimeMMMSS(t),

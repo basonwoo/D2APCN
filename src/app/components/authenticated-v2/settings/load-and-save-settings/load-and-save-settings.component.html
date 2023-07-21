@@ -20,13 +20,13 @@
     <tr>
       <td>
         <mat-form-field appearance="outline">
-          <mat-label>Name to save the configuration</mat-label>
+          <mat-label>给配置起个名</mat-label>
           <input
             formControlName="name"
             matInput
             maxlength="30"
             minlength="4"
-            placeholder="Awesome Discipline Build 4" />
+            placeholder="完美的纪律 Build 4" />
         </mat-form-field>
       </td>
       <td>
@@ -39,7 +39,7 @@
           color="primary"
           mat-raised-button
           type="submit">
-          Save current
+          保存当前配置
         </button>
       </td>
       <td>
@@ -47,8 +47,8 @@
           (click)="clearEverything()"
           color="warn"
           mat-raised-button
-          matTooltip="Clears the ENTIRE configuration and uses the default settings. Use with caution."
-          >Clear everything
+          matTooltip="清空全部配置并使用默认配置，慎用！"
+          >清空
         </button>
       </td>
       <td>
@@ -61,21 +61,21 @@
           [cdkCopyToClipboard]="config.getCurrentConfigBase64Compressed()"
           color="primary"
           mat-raised-button
-          matTooltip="Copy your current configuration into your clipboard. You will be able to share it with others and import it later.">
-          Copy Current
+          matTooltip="你可以复制当前配置与他人分享">
+          复制
         </button>
       </td>
     </tr>
     <tr style="display: none">
       <td>
         <mat-form-field appearance="outline">
-          <mat-label>Load saved configuration</mat-label>
+          <mat-label>加载已保存的配置</mat-label>
           <mat-select [(value)]="selectedEntry" [disabled]="storedConfigs.length === 0">
             <mat-option *ngFor="let element of storedConfigs" [value]="element.name">
               <span
-                >(<span *ngIf="element.configuration.characterClass === 0">Titan</span>
-                <span *ngIf="element.configuration.characterClass === 1">Hunter</span>
-                <span *ngIf="element.configuration.characterClass === 2">Warlock</span>)
+                >(<span *ngIf="element.configuration.characterClass === 0">泰坦</span>
+                <span *ngIf="element.configuration.characterClass === 1">猎人</span>
+                <span *ngIf="element.configuration.characterClass === 2">术士</span>)
               </span>
               <span> {{ element.name }}</span>
             </mat-option>
@@ -110,17 +110,17 @@
 <table [dataSource]="storedConfigs" mat-table>
   <!-- Position Column -->
   <ng-container matColumnDef="name">
-    <th *matHeaderCellDef mat-header-cell>Name</th>
+    <th *matHeaderCellDef mat-header-cell>配置名称</th>
     <td *matCellDef="let element" mat-cell>{{ element.name }} </td>
   </ng-container>
 
   <!-- Position Column -->
   <ng-container matColumnDef="class">
-    <th *matHeaderCellDef mat-header-cell> Class </th>
+    <th *matHeaderCellDef mat-header-cell> 职业 </th>
     <td *matCellDef="let element" mat-cell>
-      <span *ngIf="element.configuration.characterClass === 0">Titan</span>
-      <span *ngIf="element.configuration.characterClass === 1">Hunter</span>
-      <span *ngIf="element.configuration.characterClass === 2">Warlock</span>
+      <span *ngIf="element.configuration.characterClass === 0">泰坦</span>
+      <span *ngIf="element.configuration.characterClass === 1">猎人</span>
+      <span *ngIf="element.configuration.characterClass === 2">术士</span>
     </td>
   </ng-container>
 
@@ -188,25 +188,21 @@
   <ng-container matColumnDef="delete">
     <th *matHeaderCellDef mat-header-cell> </th>
     <td *matCellDef="let element" mat-cell>
-      <button
-        (click)="delete(element.name)"
-        color="warn"
-        mat-icon-button
-        matTooltip="Delete this configuration permanently.">
+      <button (click)="delete(element.name)" color="warn" mat-icon-button matTooltip="删除此配置">
         <mat-icon>delete_forever</mat-icon>
       </button>
       <button
         (click)="load(element.name)"
         color="primary"
         mat-icon-button
-        matTooltip="Load this configuration. Your current settings will be overwritten.">
+        matTooltip="加载此配置，你的当前配置将被覆盖">
         <mat-icon>check_circle_outline</mat-icon>
       </button>
       <button
         (click)="copySingleSettingToClipboard(element)"
         color="primary"
         mat-icon-button
-        matTooltip="Copy this configuration into your clipboard. You will be able to share it with others and import it later.">
+        matTooltip="复制此配置至剪切板">
         <mat-icon>get_app</mat-icon>
       </button>
     </td>
@@ -222,8 +218,8 @@
     color="primary"
     mat-raised-button
     (click)="copyAllSettingsToClipboard()"
-    matTooltip="Export all configurations to the clipboard. You can then save and share them.">
-    Copy all saved configurations to the clipboard
+    matTooltip="导出所有配置">
+    复制所有已保存的配置至剪切板
   </button>
 </ng-container>
 
@@ -231,23 +227,19 @@
 <br />
 <div>
   <hr />
-  <h2>Import a previously exported configuration</h2>
+  <h2>导入配置</h2>
   <form [formGroup]="importTextForm">
     <table>
       <tr>
         <td>
           <mat-form-field appearance="outline">
-            <mat-label>Copied configuration</mat-label>
+            <mat-label>已复制的配置</mat-label>
             <input formControlName="content" matInput />
           </mat-form-field>
         </td>
         <td>
-          <button
-            (click)="runImport()"
-            color="primary"
-            mat-raised-button
-            matTooltip="Import the given configuration">
-            Start the import
+          <button (click)="runImport()" color="primary" mat-raised-button matTooltip="导入">
+            开始导入
           </button>
         </td>
       </tr>

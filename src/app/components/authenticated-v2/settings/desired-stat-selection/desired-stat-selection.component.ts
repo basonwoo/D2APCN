@@ -24,6 +24,7 @@ import { InventoryService } from "../../../../services/inventory.service";
 import { ModInformation } from "../../../../data/ModInformation";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
+import { warn } from "console";
 
 function calcScore(d: number[]) {
   let score = 0;
@@ -46,12 +47,20 @@ export class DesiredStatSelectionComponent implements OnInit, OnDestroy {
   _statCombo4x100: ArmorStat[][] = [];
   _statCombo3x100: ArmorStat[][] = [];
   config_zero_waste = false;
+  statMap = {
+    Mobility: "敏捷",
+    Resilience: "韧性",
+    Recovery: "恢复",
+    Discipline: "纪律",
+    Intellect: "智慧",
+    Strength: "力量",
+  };
 
   constructor(public config: ConfigurationService, private inventory: InventoryService) {
     this.stats = Object.keys(ArmorStat)
       .filter((value) => !isNaN(Number(value)))
       .map((value) => {
-        return { name: (ArmorStat as any)[value], value: +value };
+        return { name: (this.statMap as any)[(ArmorStat as any)[value]], value: +value };
       });
   }
 

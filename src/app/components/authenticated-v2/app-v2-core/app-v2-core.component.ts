@@ -37,23 +37,23 @@ export class AppV2CoreComponent implements OnInit {
   navLinks = [
     {
       link: "/",
-      name: "Home",
+      name: "首页",
     },
     {
       link: "/cluster",
-      name: "Clustering",
+      name: "合集",
     },
     {
       link: "/help",
-      name: "Help",
+      name: "帮助",
     },
     {
       link: "/investigate",
-      name: "Armor Investigation",
+      name: "护甲调查",
     },
     {
       link: "/account",
-      name: "Account",
+      name: "账号",
     },
   ];
 

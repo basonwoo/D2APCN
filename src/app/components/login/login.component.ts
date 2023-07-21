@@ -27,6 +27,6 @@ export class LoginComponent {
   constructor() {}
 
   startLogin() {
-    window.location.href = `https://www.bungie.net/en/OAuth/Authorize?client_id=${environment.clientId}&response_type=code&reauth=true`;
+    window.location.href = `https://www.bungie.net/zh-chs/OAuth/Authorize?client_id=${environment.clientId}&response_type=code&reauth=true`;
   }
 }

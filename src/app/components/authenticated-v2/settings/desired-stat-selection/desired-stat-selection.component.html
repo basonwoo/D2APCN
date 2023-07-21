@@ -68,7 +68,7 @@
 <span id="tierSelectButtonContainer">
   <span class="tierSelectButton">
     <button mat-stroked-button color="warn" id="clearStatButton" (click)="clearStatSelection()"
-      >Clear</button
+      >清空</button
     >
   </span>
   <span class="tierSelectButton">
@@ -79,7 +79,7 @@
       aria-label="Select builds with three stats at tier 10."
       [disabled]="_statCombo3x100.length === 0">
       <mat-icon>expand_more</mat-icon>
-      Select 3x T10 Builds
+      选择可三百的组合
     </button>
     <mat-menu #menu1="matMenu" menu>
       <button mat-menu-item *ngFor="let d of _statCombo3x100" (click)="useStatPreset(d)">
@@ -125,7 +125,7 @@
       aria-label="Select builds with four stats at tier 10."
       [disabled]="_statCombo4x100.length === 0">
       <mat-icon>expand_more</mat-icon>
-      Select 4x T10 Builds
+      选择可四百的组合
     </button>
     <mat-menu #menu2="matMenu">
       <button mat-menu-item *ngFor="let d of _statCombo4x100" (click)="useStatPreset(d)">
@@ -167,11 +167,12 @@
 </span>
 
 <br />
+<br />
 <div>
-  <span class="warn"> Important notes: </span>
+  <span class="warn"> 提醒: </span>
   <ul>
-    <li>"Reduce wasted stats" currently has no function (will come back, don't worry)</li>
-    <li>The "locked stats" feature might not work for now.</li>
-    <li>The "locked stats" feature might lead to incorrect stat previews.</li>
+    <li>“减少属性浪费”功能目前未实装</li>
+    <li>“属性数值锁定”功能有时会失效</li>
+    <li>“属性数值锁定”功能有时会导致不正确的属性数值预览</li>
   </ul>
 </div>

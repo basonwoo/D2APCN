@@ -414,21 +414,21 @@
         </tr>
         <!-- ARTIFICE -->
         <tr>
-          <td>Artifice Mods</td>
+          <td>诡计护甲模组</td>
           <td colspan="3"></td>
           <td *ngFor="let stat of result_items['artificeMods']">{{ 3 * stat }}</td>
           <td>{{ sum(result_items["artificeMods"]) * 3 }}</td>
         </tr>
         <!-- TOTAL -->
         <tr class="line-top line-bottom">
-          <td>Total</td>
+          <td>共计</td>
           <td colspan="3"></td>
           <td *ngFor="let stat of result_items['total']">{{ stat }}</td>
           <td>{{ sum(result_items["total"]) }}</td>
         </tr>
         <!-- WASTE -->
         <tr>
-          <td>Waste</td>
+          <td>多余</td>
           <td colspan="3"></td>
           <td *ngFor="let stat of result_items['waste']">{{ stat }}</td>
           <td>{{ sum(result_items["waste"]) }}</td>
@@ -447,7 +447,7 @@
 <div>
   <mat-card>
     <mat-card-header>
-      <mat-card-title>Results</mat-card-title>
+      <mat-card-title>结果</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <p>{{ result_items | json }}</p>

@@ -449,7 +449,7 @@ export class ArmorClusterPageComponent implements AfterViewInit {
   async ngAfterViewInit(): Promise<void> {
     this.inventory.inventory.pipe(debounceTime(200)).subscribe(async () => {
       await this.Update();
-      this.openSnackBar("Clusters were updated.");
+      this.openSnackBar("集合更新完成");
     });
   }
 

@@ -41,7 +41,7 @@ export class AppV2CoreComponent implements OnInit {
     },
     {
       link: "/cluster",
-      name: "合集",
+      name: "集合",
     },
     {
       link: "/help",

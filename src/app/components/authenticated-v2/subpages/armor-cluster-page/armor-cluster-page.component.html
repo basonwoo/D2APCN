@@ -26,90 +26,75 @@
     Return to D2ArmorPicker
   </a>
   <mat-card>
-    <mat-card-title> About this page </mat-card-title>
+    <mat-card-title> 关于本页面 </mat-card-title>
     <mat-card-content>
-      This page <i>can</i> help you to sort out your vault a bit. It takes all your armor entries
-      and tries to sort them into {{ clusterInformation.length }} clusters. It then gives you a DIM
-      search query for each cluster. You can use this to look at similar rolls in your vault and to
-      clean out some of them.
+      本页面可以帮助你清理你的保险库，它会获取你所有的护甲并尝试将它们分成
+      {{ clusterInformation.length }} 个集合同时为你提供每个集合的 DIM
+      查询参数，你可以使用它来查看属性分布类似的护甲。
       <br />
       <br />
-      Please note that it will cluster all armor for all characters. Make sure to use "is:titan",
-      "is:warlock" or "is:hunter" in DIM.
+      请注意，此功能默认会对所有职业的护甲进行分类，确保你使用了 DIM 中的 "is:titan"、
+      "is:warlock"、"is:hunter" 功能。
       <br />
       <br />
-      Please also note that this feature is new and may have some inaccuracy for some items.
+      同时请知晓，此功能是新添加功能，某些结果可能并不准确。
     </mat-card-content>
 
-    <mat-card-title> How do I use this page? </mat-card-title>
+    <mat-card-title> 我应该如何使用？ </mat-card-title>
     <mat-card-content>
       <ol>
-        <li>Pick one of the clusters below.</li>
-        <li>Copy the DIM search query and insert it in the search bar in DIM.</li>
+        <li>选择下方某一个集合</li>
+        <li>复制对应的 DIM 查询参数并将其粘贴入 DIM 的搜索栏中</li>
         <li>
-          If you want, add one of the following to the search query: "is:titan", "is:warlock",
-          "is:hunter" (without " of course);<br />
-          You can also use "not:masterwork", "not:exotic" or other filters.
+          如果需要筛选特定职业的护甲，请将 "is:titan", "is:warlock", "is:hunter"
+          （可以不带引号）添加到 DIM 搜索栏中；<br />
+          你还可以使用 "not:masterwork"、"not:exotic" 或其他过滤器。
         </li>
-        <li
-          >Look at all the armor. Just look at it. If you see duplicates, you can look at them and
-          decide which ones to keep.
-        </li>
+        <li> 检视 DIM 中高亮的护甲，如果有重复的，你可以查看并选择保留哪些。 </li>
       </ol>
     </mat-card-content>
   </mat-card>
 
   <mat-card>
-    <mat-card-title>Options</mat-card-title>
-    <mat-card-subtitle> Additional options for the clustering results. </mat-card-subtitle>
+    <mat-card-title>选项</mat-card-title>
+    <mat-card-subtitle> 额外选项 </mat-card-subtitle>
     <mat-card-content>
       <div class="settings-container">
-        <span><b>Exotics</b><br />Decide whether you want to see or hide exotics.</span>
+        <span><b>异域护甲</b><br />是否显示异域护甲</span>
         <span>
           <mat-button-toggle-group (valueChange)="Update()" [(value)]="exoticFilter">
-            <mat-button-toggle
-              class="red"
-              matTooltip="Only select non-exotic armor pieces."
-              value="-1"
+            <mat-button-toggle class="red" matTooltip="仅对非异域护甲进行分类" value="-1"
               ><mat-icon>visibility_off</mat-icon></mat-button-toggle
             >
-            <mat-button-toggle
-              class="green"
-              matTooltip="Only select exotic  armor pieces."
-              value="1"
+            <mat-button-toggle class="green" matTooltip="仅对异域护甲进行分类" value="1"
               ><mat-icon>visibility</mat-icon></mat-button-toggle
             >
-            <mat-button-toggle checked value="0">All</mat-button-toggle>
+            <mat-button-toggle checked value="0">全部</mat-button-toggle>
           </mat-button-toggle-group>
         </span>
       </div>
       <div class="settings-container">
-        <span
-          ><b>Masterwork</b><br />Decide whether you want to see or hide masterworked armor.</span
-        >
+        <span>
+          <b>大师杰作</b>
+          <br />是否显示大师杰作护甲
+        </span>
         <span>
           <mat-button-toggle-group (valueChange)="Update()" [(value)]="masterworkFilter">
-            <mat-button-toggle
-              class="red"
-              matTooltip="Only select non-masterworked armor pieces."
-              value="-1"
+            <mat-button-toggle class="red" matTooltip="仅对非大师杰作护甲进行分类" value="-1"
               ><mat-icon>visibility_off</mat-icon></mat-button-toggle
             >
-            <mat-button-toggle
-              class="green"
-              matTooltip="Only select masterworked armor pieces."
-              value="1"
+            <mat-button-toggle class="green" matTooltip="仅对大师杰作护甲进行分类" value="1"
               ><mat-icon>visibility</mat-icon></mat-button-toggle
             >
-            <mat-button-toggle checked value="0">All</mat-button-toggle>
+            <mat-button-toggle checked value="0">全部</mat-button-toggle>
           </mat-button-toggle-group>
         </span>
       </div>
       <div class="settings-container">
-        <span><b>Class</b><br />Decide which class you want to see.</span>
+        <span><b>职业</b><br />选择职业</span>
         <span>
           <mat-button-toggle-group (valueChange)="Update()" [(value)]="classFilter">
-            <mat-button-toggle matTooltip="Titan" value="0">
+            <mat-button-toggle matTooltip="泰坦" value="0">
               <svg
                 aria-hidden="true"
                 class="svgClassIcon"
@@ -121,7 +106,7 @@
                   fill="currentColor"></path>
               </svg>
             </mat-button-toggle>
-            <mat-button-toggle matTooltip="Hunter" value="1">
+            <mat-button-toggle matTooltip="猎人" value="1">
               <svg
                 aria-hidden="true"
                 class="svgClassIcon"
@@ -133,7 +118,7 @@
                   fill="currentColor"></path>
               </svg>
             </mat-button-toggle>
-            <mat-button-toggle matTooltip="Warlock" value="2">
+            <mat-button-toggle matTooltip="术士" value="2">
               <svg
                 aria-hidden="true"
                 class="svgClassIcon"
@@ -146,7 +131,7 @@
               </svg>
             </mat-button-toggle>
 
-            <mat-button-toggle checked value="-1">All</mat-button-toggle>
+            <mat-button-toggle checked value="-1">全部</mat-button-toggle>
           </mat-button-toggle-group>
         </span>
       </div>
@@ -161,41 +146,23 @@
     fxLayoutGap="5px">
     <ng-container *ngFor="let cluster of clusters; let idx = index">
       <mat-card *ngIf="cluster.length > 0" class="cluster-item">
-        <mat-card-title> Cluster {{ idx + 1 }} </mat-card-title>
-        <mat-card-subtitle>
-          Contains {{ cluster.length }} item{{ cluster.length > 1 ? "s" : "" }}
-        </mat-card-subtitle>
+        <mat-card-title> 集合 {{ idx + 1 }} </mat-card-title>
+        <mat-card-subtitle> 包含 {{ cluster.length }} 个护甲 </mat-card-subtitle>
         <mat-card-content>
           <div>
             <table width="100%">
               <ng-container *ngFor="let entry of clusterInformation[idx].mean; let idx1 = index">
                 <tr
                   *ngIf="idx1 > 0"
-                  [matTooltip]="
-                    [
-                      '',
-                      'Mobility',
-                      'Resilience',
-                      'Recovery',
-                      'Discipline',
-                      'Intellect',
-                      'Strength'
-                    ][idx1]
-                  ">
-                  <td>
+                  [matTooltip]="['', '敏捷', '韧性', '恢复', '纪律', '智慧', '力量'][idx1]">
+                  <td width="40px">
                     {{
-                      [
-                        "",
-                        "Mobility",
-                        "Resilience",
-                        "Recovery",
-                        "Discipline",
-                        "Intellect",
-                        "Strength"
-                      ][idx1]
+                      ["", "敏捷    ", "韧性    ", "恢复    ", "纪律    ", "智慧    ", "力量    "][
+                        idx1
+                      ]
                     }}
                   </td>
-                  <td width="100%">
+                  <td style="width: calc(100% - 40px)">
                     <div class="stat-range">
                       <div
                         class="stat-range-bar"
@@ -210,7 +177,7 @@
             </table>
           </div>
           <mat-form-field appearance="fill" class="searchQueryField">
-            <mat-label>DIM Search Query</mat-label>
+            <mat-label>DIM 查询参数</mat-label>
             <input [value]="getDIMStringForCluster(cluster)" matInput readonly type="text" />
           </mat-form-field>
           <button
@@ -218,9 +185,8 @@
             [cdkCopyToClipboard]="getDIMStringForCluster(cluster)"
             class="copyButton"
             color="primary"
-            mat-raised-button
-            matTooltip="Use this button to copy a DIM search query to your clip board. It allows you to search the given items in DIM.">
-            Copy DIM query to clipboard
+            mat-raised-button>
+            复制 DIM 查询参数到剪贴板
           </button>
         </mat-card-content>
       </mat-card>

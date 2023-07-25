@@ -19,16 +19,14 @@
   <mat-card-header>
     <div class="example-header-image" mat-card-avatar></div>
     <mat-card-title>Destiny 2 Armor Picker</mat-card-title>
-    <mat-card-subtitle>
-      配装工具，由 Mijago 制作，萨勒你玛芬尼一半#9836 进行汉化
-    </mat-card-subtitle>
+    <mat-card-subtitle> 由 Mijago 制作，萨勒你玛芬尼一半#9836 汉化 </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <p>
-      此工具允许你从装备栏和保险库中选择最佳的护甲搭配以满足您的六维需求
+      此工具可以为你从装备栏和保险库中选择最佳的护甲搭配以满足您的六维需求
       <br />
       <br />
-      要使用此工具，必须进行登录以从 Bungie API 获取你的护甲。
+      要使用此工具，必须进行登录以从 Bungie API 获取你的护甲数据
       <br />
       <br />
       如果你觉得好用，可以前往
@@ -38,13 +36,13 @@
       <a href="https://github.com/Mijago/D2ArmorPicker" target="_blank">Github</a>
       提 issue
       <br />
-      如果你在使用过程中发现汉化错误，请前往
+      如果你在使用过程中发现汉化文本错误或者有更好的汉化建议，请前往
       <a href="https://github.com/basonwoo/D2APCN" target="_blank">Github</a>
       提 issue
     </p>
     <p>
-      D2ArmorPicker 使用 Bungie 的 API 及其 OAuth 授权，用户在 Bungie 官网登录之后，D2ArmorPicker
-      会从 Bungie 接收到一个临时登录令牌。这意味着 D2ArmorPicker 并不会实际获取你的账户凭据。
+      D2AP 使用 Bungie API 及其 OAuth 授权，你在 Bungie 官网登录之后，D2AP 会从 Bungie
+      接收到一个临时登录令牌。这意味着 D2AP 并不会实际获取你的账户凭据。
     </p>
   </mat-card-content>
   <mat-card-actions>
@@ -54,7 +52,7 @@
 
 <mat-card>
   <mat-card-title> 示例 </mat-card-title>
-  <mat-card-subtitle>D2ArmorPicker 的功能</mat-card-subtitle>
+  <mat-card-subtitle>D2AP 的功能</mat-card-subtitle>
   <mat-card-content>
     <mat-accordion>
       <mat-expansion-panel class="mat-elevation-z11">
@@ -69,11 +67,10 @@
           your armor (including your vault and your postmaster), and then show you which stat
           selections are even possible with your current gear. The tool also shows you all possible
           loadouts with three or four stats at 100!-->
-          <img class="image-example" src="assets/info/statselection.png" />
+          <img class="image-example" src="assets/info/statselection-cn.png" />
           <br />
           <br />
-          你还可以预设好不同的星象碎片，此外，还可以选择 0 浪费模式，D2ArmorPicker
-          会自动添加属性模组以减少浪费。
+          你可以预设好不同的星象碎片，此外，还可以选择零浪费模式，D2AP 会自动添加属性模组以减少浪费
           <!--There are also additional settings. You can add stasis fragments and negative and positive
           stat mods to your builds. Also, you can select 0-waste builds (so only flat numbers).
           D2ArmorPicker will also add stat mods to reduce wasted stats wherever possible!-->
@@ -86,18 +83,18 @@
           <mat-panel-description> 各种可选的护甲组合 </mat-panel-description>
         </mat-expansion-panel-header>
         <p>
-          D2ArmorPicker 会向你展示一个包含诸多护甲搭配的表格，你可以对表格进行排序
-          或者筛选，之后点击某一行来查看达成期望属性值所需要安装的模组。
+          D2AP 会向你展示一个包含许多护甲搭配的表格，你可以对表格进行排序
+          或者筛选，之后点击某一条来查看达成期望属性值所需要安装的模组。
           <!--D2ArmorPicker will show you a table with many results. You can sort and filter it, and
           then you click on one row to see which items are needed for your desired stats.-->
-          <img class="image-example" src="assets/resultOverviewWithFlex.png" />
+          <img class="image-example" src="assets/resultOverviewWithFlex-cn.png" />
           <br />
           <br />
           该页面还将详细说明要达成期望属性值你还需要做的操作，以下截图展示了更多细节：
           <!--The page will also give you a detailed description of what you have to do in order to get
           to your desired build. The following screenshot shows one of the more detailed
           descriptions:-->
-          <img class="image-example" src="assets/info/whattodonow.png" />
+          <img class="image-example" src="assets/info/whattodonow-cn.png" />
         </p>
       </mat-expansion-panel>
 
@@ -107,8 +104,8 @@
           <mat-panel-description> 整理保险库 </mat-panel-description>
         </mat-expansion-panel-header>
         <div>
-          自 2.0.14 版本开始，D2ArmorPicker 新增了护甲集合功能，这会将所有护甲根据六维分布分为 25
-          组， 每一组中的护甲都会有相似的六维属性，这将可以帮助你清理仓库。
+          自 2.0.14 D2AP 新增了护甲集合功能，这会将所有护甲根据六维分布分为 25
+          组，每一组中的护甲都会有相似的六维属性，这将可以帮助你清理保险库。
           <!--Since version 2.0.14, D2ArmorPicker has an armor clustering feature. This means that it
           takes all your armor and groups it in 25 groups, where all items in one group has very
           similar stats. This can help you to clear out your vault, especially from duplicated armor

@@ -28,86 +28,71 @@
 
   <mat-card>
     <mat-card-title>
-      <span
-        >About D2ArmorPicker <small> by Mijago</small>
-        <a href="https://twitter.com/MijagoCoding/" target="_blank" matTooltip="Birb App">
+      <span>
+        关于 D2AP
+        <small> 由 Mijago 开发</small>
+        <a href="https://twitter.com/MijagoCoding/" target="_blank" matTooltip="小蓝鸟">
           <img alt="Me on twitter" class="logo-twitter" src="assets/logo-twitter.png" />
         </a>
-        <a
-          href="https://ko-fi.com/mijago"
-          target="_blank"
-          matTooltip="If you like my work, you can always buy me a coffee!">
+        <a href="https://ko-fi.com/mijago" target="_blank" matTooltip="打赏">
           <img alt="Ko-Fi" class="logo-twitter" src="assets/logo-kofi.png" />
         </a>
-        <a
-          href="http://discord.d2armorpicker.com/"
-          target="_blank"
-          matTooltip="Visit me at the development & support discord.">
+        <a href="http://discord.d2armorpicker.com/" target="_blank" matTooltip="加入 discord 频道">
           <img alt="Discord" class="logo-twitter" src="assets/logo-discord.png" />
         </a>
+        ，<small>萨勒你玛芬尼一半#9836 汉化</small>
       </span>
     </mat-card-title>
     <mat-card-content>
-      D2ArmorPicker (or short D2AP) is a small web-app to quickly find armor that fits your desired
-      stat requirements. It uses the armor in your vault, inventory and postmaster, calculates every
-      possible variation and shows only those that fulfill the given requirements.
+      D2ArmorPicker（简称 D2AP）是一个小型 web 应用，它可以帮助你快速找到达成目标属性所需的盔甲。
       <br />
       <br />
-      As I raided a lot and I mainly play meme builds, I wanted to be able to switch exotics and
-      have decent stats without being a burden on my team. That's why I developed the
-      <a href="https://github.com/Mijago/D2-Gear-Calculator" target="_blank"
-        >first version of this tool</a
-      >
-      in Python. After a few days I started to translate this tool
-      <a href="https://mijago.github.io/D2GearCalculator/" target="_blank">into a webpage</a>. My
-      friends liked it, but it didn't have API access. Thus I created the first version of
-      D2ArmorPicker, and after people started using and liking it, I started to completely rewrite
-      it - that's Version&nbsp;2!
+      由于我经常玩突袭，因此我希望可以围绕异域护甲预先构建出多个 build
+      以便切换，这样子可以使我不至于成为火力战队的负担，这是我开发的初衷。
       <br />
       <br />
-      I keep updating and improving this tool, but beware that it takes a bit, as I work on it on my
-      spare time. Feel free to follow me on Twitter
+      <a href="https://github.com/Mijago/D2-Gear-Calculator" target="_blank">初版</a>使用 Python
+      构建，几天之后，我使用 web 技术将它变成了
+      <a href="https://mijago.github.io/D2GearCalculator/" target="_blank">web 应用</a>。
+      我的朋友们觉得很好用，但是它没有 Bungie 的 API 权限， 因此我开发了第一版的
+      D2AP，在得到了越来越多玩家的喜爱之后，我重写了它，就是 2.0 版本！
+      <br />
+      <br />
+      我一直在对 D2AP 更新迭代，但请注意，我只能用业余时间进行这些工作。欢迎在 Twitter
       <a href="https://twitter.com/MijagoCoding/" target="_blank"
         ><img alt="Me on twitter" class="logo-twitter" src="assets/logo-twitter.png" /></a
-      >, I occasionally post updates there. If you like my tools and want to support me, head to
-      <a href="https://ko-fi.com/mijago" target="_blank">ko-fi.com</a> and buy me a coffee! ❤
+      >关注我， 我偶尔会在上面发布更新。如果 D2AP 帮到了你，请在
+      <a href="https://ko-fi.com/mijago" target="_blank">ko-fi.com</a> 请我喝杯咖啡吧！
     </mat-card-content>
   </mat-card>
 
   <mat-card>
-    <mat-card-title> How do I use D2ArmorPicker? </mat-card-title>
+    <mat-card-title> 我该怎样使用 D2AP？ </mat-card-title>
     <mat-card-content>
-      Follow these few steps:
+      以下是使用步骤：
       <ol>
-        <li>Login. You already did this!</li>
+        <li>登录。你已经完成了！</li>
         <li>
-          [Optional] Pick an exotic you want to use. The tool will only display results for this
-          exotic. You can always undo this.
+          [可选]选中一件你要用的异域护甲，D2AP 会展示出仅包含它的护甲组合结果，你随时可以取消此选中
+        </li>
+        <li> [可选]选择额外的模组或者星象碎片来提供属性加成/惩罚，这很重要 </li>
+        <li>
+          选择你想要的属性，这是 D2AP 的核心功能。你只需要把恢复设置为 100，它就会为你显示所有 100
+          恢复的护甲组合。<i>注意：D2AP 会自动添加护甲属性模组。</i>
         </li>
         <li>
-          [Optional] Select additional mods/fragments that give a bonus (or penalty). These are
-          important if you want certain stat combinations even if you have penalties on your gear.
-        </li>
-        <li>
-          Select the stat distribution you seek. This is the heart of D2ArmorPicker. You just click
-          100 recovery and it will display you builds that have 100 recovery.
-          <i>Note that it automatically adds stat mods if necessary.</i>
-        </li>
-        <li>
-          Now look to the result table. On a normal desktop it should be on the right, on smaller
-          devices it might move below the configuration. The table lists multiple results and you
-          can sort it by your requirements.<br />
-          <b>Click</b> on an entry to open look the detailed view:
+          现在查看结果列表，在大多数设备上它应该在右侧，在小屏幕设备上，它可能会在属性设置的下方。表格列出了多个护甲组合，你可以根据自己的需要对表格进行排序。
+          <br />
+          <b>点击</b>某一条查看详情:
           <div class="preview-image-container">
             <img
               alt="Preview of the results table"
               class="preview-image"
-              src="assets/armor-images/preview_result_details.png" />
+              src="assets/resultOverviewWithFlex-cn.png" />
           </div>
-          The example above shows a build that utilizes Dunemarchers and a zero-waste-build. To
-          achieve it, I have to move all the items in my inventory and equip them. After this, I
-          <i>masterwork</i> them and <i>add the mods</i> as the table displays them:
-          <ul>
+          上面例子展示了围绕炎阳护腕构建的 build，要达成这些属性，我需要把这些护甲移动到
+          装备栏并装备上它们，将它们升级到<i>大师杰作</i>，然后<i>添加表格中显示的模组</i>。
+          <!--  <ul>
             <li><b>Discipline:</b> One major mod, one minor mod;</li>
             <li><b>Intellect:</b> One major mod, one minor mod;</li>
             <li><b>Strength:</b> One major mod;</li>
@@ -115,32 +100,26 @@
               >I also add Powerful Friends and Radiant Light, as I chose them in the
               configuration.</li
             >
-          </ul>
+          </ul>-->
         </li>
       </ol>
     </mat-card-content>
   </mat-card>
 
   <mat-card>
-    <mat-card-title> Where can I grind high stat armor? </mat-card-title>
+    <mat-card-title> 从哪里获取高属性护甲？ </mat-card-title>
     <mat-card-content>
-      There are many spots that give you mediocre armor, but for the really good builds you need the
-      correct armor. Here I provide a list of high-stat armor sources. It may not be complete, but a
-      good starting point.
-      <i>Last updated February 8, 2022.</i>
+      在这里我提供了高属性护甲来源的列表。 它可能并不完整，但却是一个很好的起点。
+      <br />
+      <i>最近更新于 2022 年 2 月 8 日</i>
 
       <ul>
-        <li> Farm legendary Dares!</li>
-        <li>
-          Clear Pit of Heresy Dungeon, the boss drop guarantees two stats to be 16 (or higher).</li
-        >
-        <li>
-          Farm a bunch of Spoils, go into Master Vault of Glass and buy armor at the final
-          chest.</li
-        >
-        <li> The list will be extended sometime in Witch Queen!</li>
+        <li>刷传说永恒挑战</li>
+        <li>完成异端深渊地牢，尾王会掉落双 16 甚至更高的护甲</li>
+        <li>刷一堆战利品代币，前往大师玻璃拱顶尾王箱子买护甲。</li>
+        <li>该列表会在《邪姬魅影》的某个时候更新！</li>
       </ul>
-      Some good armor rolls may look like these:
+      一些好的护甲长这样：
       <div fxLayout="row" id="armor-image-container">
         <img src="assets/armor-images/kabrs_battlecage.png" />
         <img src="assets/armor-images/lightkin_gauntlets.png" />
@@ -151,7 +130,7 @@
   </mat-card>
 
   <mat-card>
-    <mat-card-title>Known Issues</mat-card-title>
+    <mat-card-title>已知问题</mat-card-title>
     <mat-card-content>
       <ul>
         <li *ngFor="let text of knownIssues">{{ text }}</li>
@@ -160,7 +139,7 @@
   </mat-card>
 
   <mat-card>
-    <mat-card-title>Changelog</mat-card-title>
+    <mat-card-title>更新日志</mat-card-title>
     <mat-card-content class="changelog-table-container">
       <app-changelog-list></app-changelog-list>
     </mat-card-content>

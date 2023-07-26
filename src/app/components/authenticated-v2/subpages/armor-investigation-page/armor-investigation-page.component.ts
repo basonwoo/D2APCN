@@ -221,17 +221,17 @@ export class ArmorInvestigationPageComponent implements OnInit, OnDestroy {
   getCategoryName(id: number): string {
     switch (id) {
       case 1:
-        return "Helmets";
+        return "头盔";
       case 2:
-        return "Gauntlets";
+        return "臂铠";
       case 3:
-        return "Chest Pieces";
+        return "胸部护甲";
       case 4:
-        return "Legs";
+        return "腿部护甲";
       case 5:
-        return "Class Items";
+        return "职业物品";
     }
-    return "Unknown Category";
+    return "未知";
   }
 
   getPlugSum(plugId: number) {

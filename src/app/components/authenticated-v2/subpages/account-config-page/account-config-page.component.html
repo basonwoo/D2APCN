@@ -26,46 +26,42 @@
     Return to D2ArmorPicker
   </a>
   <mat-card>
-    <mat-card-title> Account Configuration </mat-card-title>
-    <mat-card-subtitle>
-      The configuration on this page will not be reset when you reset your build settings.
-    </mat-card-subtitle>
-    <mat-card-content>
-      This will come in a future update. Right now, I just wanted to push the "Debugging" section
-      out.
-    </mat-card-content>
+    <mat-card-title> 账号设置 </mat-card-title>
+    <mat-card-subtitle> 当你修改 build 设置时，本页面的配置不会重置 </mat-card-subtitle>
+    <mat-card-content> 这些将在未来的更新中出现，现在，我只想将“调试”部分推出。 </mat-card-content>
   </mat-card>
 
   <mat-card>
-    <mat-card-title> Debugging </mat-card-title>
-    <mat-card-subtitle> Some options for debugging purposes. </mat-card-subtitle>
+    <mat-card-title> 调试 </mat-card-title>
+    <mat-card-subtitle> 一些用于调试目的的功能 </mat-card-subtitle>
     <mat-card-content>
-      If the team asks you to send some specific data, you can find it here:<br />
+      如果你需要发送一些特定数据，可以在这里找到：<br />
       <a
         (click)="downloadArmorInformation()"
         class="btn-download"
         color="primary"
         mat-raised-button>
-        Download armor information (d2ap_armor.json)
+        下载护甲信息(d2ap_armor.json)
       </a>
       <a
         (click)="downloadManifestInformation()"
         class="btn-download"
         color="primary"
         mat-raised-button>
-        Download manifest information (d2ap_manifest.json)
+        下载详细清单(d2ap_manifest.json)
       </a>
       <br />
       <br />
 
-      If you experience issues with the local database - for example, exotics not being found, try
-      this:<br />
+      如果你遇到本地数据库问题--比如某件异域护甲找不到，试试这个：
+      <br />
       <a (click)="resetDatabase()" class="btn-download" color="warn" mat-raised-button>
-        Delete Database </a
-      ><br />
-      If you really want to reset EVERYTHING, use this: <br />
+        删除数据库
+      </a>
+      <br />
+      如果你要重置整个应用，用这个：<br />
       <a (click)="resetEverything()" class="btn-download" color="warn" mat-raised-button>
-        Reset the whole application
+        重置应用
       </a>
     </mat-card-content>
   </mat-card>

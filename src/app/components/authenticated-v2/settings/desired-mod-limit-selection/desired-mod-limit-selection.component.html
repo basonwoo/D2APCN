@@ -53,7 +53,7 @@
   color="warn"
   class="mat-elevation-z4 impossible-container"
   *ngIf="disabledSlotLimitation">
-  模组费用限制目前已禁用，护甲插槽过滤仍然有效。
+  模组能量限制目前已禁用，特殊护甲过滤仍然有效
   <!--The mod cost limitation is currently disabled. Modslot filtering still works.-->
 </mat-toolbar>
 <div class="minispace"></div>
@@ -67,76 +67,71 @@
       <mat-panel-description> 护甲限制功能详细说明 </mat-panel-description>
     </mat-expansion-panel-header>
     <div id="explanation-description">
-      This section allows you to further finetune the results to your requirements.<br />
+      <br />
+      此部分允许你根据需要进行微调
+      <br />
 
       <div class="minispace"></div>
-      <u>Limitation of available stat mod types</u><br />
-      First off, you are able to
-      <span class="text-highlight">select the kind and amount of stat mods</span> you want. By
-      filling the bars you
-      <span class="text-highlight">specify how many modslots are already occupied</span> and thus
-      the tool knows how much space it is able to use for your builds. Hover over the bars, it will
-      show you which mods are available after you changed your selection.
+      <u>限制可用的属性模组类型</u>
+      <br />
+      首先，你可以<span class="text-highlight">选择你需要的属性模组的种类和数量</span
+      >，通过填充条柱你可以<span class="text-highlight">告诉工具剩余几点费用可以使用</span
+      >，鼠标悬浮在条柱上会显示哪些属性模组在你设置剩余费用后依然可用。
       <div class="minispace"></div>
       <div class="example-usecase">
-        Example Use Case: "On one item I can only use up to four recovery mods, no major intellect
-        mod. One item can not hold any mods". In this scenario you would set one slot to 10 used
-        slots, and the rest to 6.
+        举例：某件护甲上我最多只能使用 4
+        能量的恢复模组，不使用智慧模组，另外一件不使用模组。这种情况下你可以将前者设置为已使用 6
+        能量，后者设置为已使用 10 能量。
       </div>
       <br />
-      <u>Filter for Elemental Affinity and Armor Perk/Slot</u><br />
-      This allows you to super-finetune your elemental and armor-perk requirements. You can change
-      the settings for <span class="text-highlight">each armor slot</span>. There are two modes per
-      armor slot: <span class="text-highlight">Locked</span> and
-      <span class="text-highlight">Unlocked</span>. Per default each entry is in the
-      <span class="text-highlight">Locked</span> mode.
+      <u>过滤特殊护甲</u>
+      <br />
+      你可以通过更改<span class="text-highlight">特殊护甲插槽</span
+      >筛选护甲类别，特殊护甲插槽有<span class="text-highlight">锁定</span>和<span
+        class="text-highlight"
+        >解锁</span
+      >两种状态，默认为锁定。
       <div class="minispace"></div>
-      <span class="text-highlight">Locked</span> means that
-      <span class="text-highlight">this armor slot must have</span> the selected element or perk.
+      <span class="text-highlight">锁定</span>表示将会筛选出对应类别以及对应部位的护甲。
       <div class="minispace"></div>
-      <span class="text-highlight">Unlocked</span> means that the perk must exist, but
-      <span class="text-highlight">the exact armor slot is irrelevant</span>. That means that the
-      tool can decide where it puts the desired element or perk.
+      <span class="text-highlight">解锁</span
+      >状态表示会筛选出对应类别护甲，但是不强求对应部位的护甲。
       <div class="minispace"></div>
       <div class="example-usecase">
-        Example Use Case: "The Class Item and Gauntlet
-        <span class="text-highlight">must be stasis</span>. Oh, and I need two solar and one arc
-        modslots, but the position does not matter". In this scenario, Class Item and Gauntlet would
-        be <span class="text-highlight">Locked</span> and the rest would be
-        <span class="text-highlight">Unlocked</span>.
+        举例：职业物品和臂铠必须是冰属性护甲，需要两个火属性插槽和一个电属性插槽，位置无所谓。这种情况下，职业物品和臂铠需要设置为锁定状态，剩下的设置为解锁状态。
       </div>
       <br />
-      Legend:
+      传说:
       <table class="modslot-legend">
         <tr>
           <td>
             <app-armor-perk-icon [perk]="ArmorPerkOrSlot.SlotVaultOfGlass"></app-armor-perk-icon>
           </td>
-          <td>Vault of Glass</td>
+          <td>玻璃拱顶护甲模组</td>
           <td>
             <app-armor-perk-icon [perk]="ArmorPerkOrSlot.SlotDeepStoneCrypt"></app-armor-perk-icon>
           </td>
-          <td>Deep Stone Crypt</td>
+          <td>深岩墓室突袭模组</td>
           <td>
             <app-armor-perk-icon
               [perk]="ArmorPerkOrSlot.SlotGardenOfSalvation"></app-armor-perk-icon>
           </td>
-          <td>Garden of Salvation</td>
+          <td>救赎花园突袭模组</td>
         </tr>
         <tr>
           <td>
             <app-armor-perk-icon [perk]="ArmorPerkOrSlot.SlotLastWish"></app-armor-perk-icon>
           </td>
-          <td>Last Wish</td>
+          <td>最后一愿突袭模组</td>
           <td>
             <app-armor-perk-icon
               [perk]="ArmorPerkOrSlot.SlotVowOfTheDisciple"></app-armor-perk-icon>
           </td>
-          <td>Vow of the Disciple</td>
+          <td>门徒誓约突袭模组</td>
           <td>
             <app-armor-perk-icon [perk]="ArmorPerkOrSlot.SlotNightmare"></app-armor-perk-icon>
           </td>
-          <td>Nightmare Modslot</td>
+          <td>梦魇模组</td>
         </tr>
         <tr>
           <td>
@@ -146,12 +141,12 @@
           <td>
             <app-armor-perk-icon [perk]="ArmorPerkOrSlot.PerkIronBanner"></app-armor-perk-icon>
           </td>
-          <td>Iron Banner Perk</td>
+          <td>钢铁领主的骄傲</td>
           <td>
             <app-armor-perk-icon
               [perk]="ArmorPerkOrSlot.PerkUniformedOfficer"></app-armor-perk-icon>
           </td>
-          <td>Uniformed Officer Perk</td>
+          <td>赛季护甲</td>
         </tr>
       </table>
     </div>

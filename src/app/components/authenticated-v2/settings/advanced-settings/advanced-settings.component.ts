@@ -56,7 +56,7 @@ export class AdvancedSettingsComponent implements OnInit, OnDestroy {
         ],
         护甲选择: [
           {
-            name: "允许使用除异域以及传说以外的其他护甲",
+            name: "允许使用除异域护甲和传说护甲以外的其他护甲",
             cp: (v: boolean) =>
               this.config.modifyConfiguration((c) => (c.allowBlueArmorPieces = v)),
             value: c.allowBlueArmorPieces,
@@ -75,7 +75,7 @@ export class AdvancedSettingsComponent implements OnInit, OnDestroy {
         ],
         大师杰作: [
           {
-            name: "假设所有紫装都升级到了大师",
+            name: "假设所有传说护甲都升级到了大师杰作",
             cp: (v: boolean) =>
               this.config.modifyConfiguration((c) => (c.assumeLegendariesMasterworked = v)),
             value: c.assumeLegendariesMasterworked,
@@ -84,7 +84,7 @@ export class AdvancedSettingsComponent implements OnInit, OnDestroy {
             help: undefined,
           },
           {
-            name: "假设所有金装都升级到了大师",
+            name: "假设所有异域护甲都升级到了大师杰作",
             cp: (v: boolean) =>
               this.config.modifyConfiguration((c) => (c.assumeExoticsMasterworked = v)),
             value: c.assumeExoticsMasterworked,
@@ -93,7 +93,7 @@ export class AdvancedSettingsComponent implements OnInit, OnDestroy {
             help: "如果启用此设置，D2AP 会将所有未升级到大师的金装视为已升级到大师。",
           },
           {
-            name: "假设所有职业物品都升级到了大师",
+            name: "假设所有职业物品都升级到了大师杰作",
             cp: (v: boolean) =>
               this.config.modifyConfiguration((c) => (c.assumeClassItemMasterworked = v)),
             value: c.assumeClassItemMasterworked,
@@ -102,7 +102,7 @@ export class AdvancedSettingsComponent implements OnInit, OnDestroy {
             help: "如果启用此设置，D2AP 会给职业物品的每个属性都 +2。",
           },
           {
-            name: "仅使用已经升级到大师的护甲",
+            name: "仅使用已经升级到大师杰作的护甲",
             cp: (v: boolean) =>
               this.config.modifyConfiguration((c) => (c.onlyUseMasterworkedItems = v)),
             value: c.onlyUseMasterworkedItems,
@@ -130,7 +130,7 @@ export class AdvancedSettingsComponent implements OnInit, OnDestroy {
             help: "选择模组时执行进一步的优化，这会增加计算所需的时间。",
           },
         ],
-        "Extra Columns": [
+        其他设置: [
           {
             name: "展示可达到的最高属性而不是实际属性",
             cp: (v: boolean) =>
@@ -138,7 +138,7 @@ export class AdvancedSettingsComponent implements OnInit, OnDestroy {
             value: c.showPotentialTierColumn,
             disabled: false,
             impactsResultCount: false,
-            help: "Shows an additional column in the table that shows how many tiers this build would have, if all stat mods were used. This is important when builds do not use all 5 stat mods.",
+            help: "在结果列表中新增一列，显示如果使用所有属性模组 build 将达到的最高阶。",
           },
           {
             name: "新增一列展示属性浪费情况",
@@ -147,7 +147,7 @@ export class AdvancedSettingsComponent implements OnInit, OnDestroy {
             value: c.showWastedStatsColumn,
             disabled: false,
             impactsResultCount: false,
-            help: "Shows an additional column in the table that shows how many stats are wasted in a build.",
+            help: "在结果列表中新增一列，显示 build 的属性浪费情况。",
           },
         ],
         属性浪费: [
@@ -174,7 +174,7 @@ export class AdvancedSettingsComponent implements OnInit, OnDestroy {
         ],
         数据科学: [
           {
-            name: "Add a constant +1 resilience to the results with non-exotic chests (resets on reload).",
+            name: "对结果使用 +1 韧性（刷新后重置）",
             cp: (v: boolean) =>
               this.config.modifyConfiguration((c) => (c.addConstent1Resilience = v)),
             value: c.addConstent1Resilience,

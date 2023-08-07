@@ -77,7 +77,7 @@
             #tooltip="matTooltip"
             *ngIf="_config_selectedExotics.indexOf(-1) > -1"
             disableRipple
-            matTooltip="此设置强制忽略异域护甲"
+            matTooltip="忽略异域护甲"
             >不使用异域护甲
           </mat-chip>
           <mat-chip
@@ -86,7 +86,7 @@
               _config_selectedExotics.length === 1 && _config_selectedExotics.indexOf(-1) === -1
             "
             disableRipple
-            matTooltip="此设置强制使用特定的异域护甲"
+            matTooltip="使用特定异域护甲"
             >异域护甲
           </mat-chip>
           <mat-chip
@@ -107,7 +107,7 @@
             #tooltip="matTooltip"
             *ngIf="_config_tryLimitWastedStats"
             disableRipple
-            matTooltip="此设置将使用减少属性浪费"
+            matTooltip="减少属性浪费"
             >减少属性浪费
           </mat-chip>
           <mat-chip
@@ -121,7 +121,7 @@
             #tooltip="matTooltip"
             *ngIf="_config_armorPerkLimitation.length > 0"
             disableRipple
-            matTooltip="此设置会筛选出拥有特定插槽或 perk 的护甲">
+            matTooltip="筛选特定插槽或 perk 的护甲">
             特殊护甲
           </mat-chip>
           <mat-chip
@@ -161,7 +161,7 @@
             "
             disableRipple
             matTooltip="查看高级设置以了解启用了哪些大师杰作护甲">
-            假设都是大师杰作护甲
+            假定大师之作
           </mat-chip>
         </mat-chip-list>
       </mat-form-field>
@@ -315,12 +315,8 @@
 
         <!-- Name Column -->
         <ng-container matColumnDef="tiers">
-          <th
-            *matHeaderCellDef
-            mat-header-cell
-            mat-sort-header="Tiers"
-            matTooltip="此 build 中的等级，10 点为一级"
-            >Tiers
+          <th *matHeaderCellDef mat-header-cell mat-sort-header="Tiers" matTooltip="10 点为一阶"
+            >阶
           </th>
           <td *matCellDef="let element" mat-cell> {{ element.tiers }} </td>
         </ng-container>
@@ -331,8 +327,8 @@
             *matHeaderCellDef
             mat-header-cell
             mat-sort-header="Max Tiers"
-            matTooltip="使用 N 个模组可以达到的最高等级，目前模组过滤暂未纳入考量"
-            >最高等级
+            matTooltip="使用 N 个模组可以达到的最高阶，目前模组过滤暂未纳入考量"
+            >最高阶
           </th>
           <td *matCellDef="let element" mat-cell>
             {{ element.tiers + (5 - element.modCount) }}
@@ -344,8 +340,8 @@
             *matHeaderCellDef
             mat-header-cell
             mat-sort-header="Waste"
-            matTooltip="How many points are wasted. Any stat not ending in 0 adds to this value."
-            >Wasted
+            matTooltip="浪费的能量，剩余能量不为 0 的条目都会统计在内。"
+            >浪费
           </th>
           <td *matCellDef="let element" mat-cell> {{ element.waste }} </td>
         </ng-container>

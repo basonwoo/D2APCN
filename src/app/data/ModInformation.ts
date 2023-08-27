@@ -509,14 +509,14 @@ export const ModInformation: EnumDictionary<ModOrAbility, Modifier> = {
     requiredArmorAffinity: DestinyEnergyType.Any,
     hash: 3192552691,
   },
-  [ModOrAbility.ThreadOfContinuity]: {
-    id: ModOrAbility.ThreadOfContinuity,
-    name: "持续丝线",
-    description: "向目标施加的悬停、瓦解和割裂效果拥有更久的持续时间。",
+  [ModOrAbility.ThreadOfPropagation]: {
+    id: ModOrAbility.ThreadOfPropagation,
+    name: "增殖丝线",
+    description: "充能近战最后一击会赋予你的缚丝武器瓦解弹药。",
     type: ModifierType.Strand,
     bonus: [{ stat: ArmorStat.Strength, value: 10 }],
     cost: 1,
     requiredArmorAffinity: DestinyEnergyType.Any,
-    hash: 3192552690,
+    hash: 4208512210,
   },
 };
